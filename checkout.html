@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulsar – Checkout</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/xrw1yfu.css" />
+  <link rel="stylesheet" href="css/pulsar.css" />
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo-link">
+    <img src="assets/img/elemente/Pulsar Wordmark.svg" class="logo" alt="Pulsar" />
+  </a>
+
+  <nav class="main-nav">
+    <button class="nav-toggle" type="button">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <ul class="nav-list" data-nav>
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="results.html" class="nav-link">Results</a></li>
+      <li><a href="psycho.html" class="nav-link">Psycho</a></li>
+      <li><a href="shop.html" class="nav-link is-active">Shop</a></li>
+    </ul>
+  </nav>
+
+  
+</header>
+
+<section class="checkout section">
+  <div class="container">
+
+    <header class="checkout__head reveal">
+      <h1 class="checkout__title">Checkout</h1>
+    </header>
+
+    <!-- Fortschritt -->
+    <div class="checkout-steps reveal">
+      <div class="checkout-step is-active" data-step-indicator="1">
+        <span class="checkout-step__number">1</span>
+        <span class="checkout-step__label">Daten</span>
+      </div>
+
+      <div class="checkout-step__divider"></div>
+
+      <div class="checkout-step" data-step-indicator="2">
+        <span class="checkout-step__number">2</span>
+        <span class="checkout-step__label">Zahlung</span>
+      </div>
+
+      <div class="checkout-step__divider"></div>
+
+      <div class="checkout-step" data-step-indicator="3">
+        <span class="checkout-step__number">3</span>
+        <span class="checkout-step__label">Prüfung</span>
+      </div>
+
+      <div class="checkout-step__divider"></div>
+
+      <div class="checkout-step" data-step-indicator="4">
+        <span class="checkout-step__number">4</span>
+        <span class="checkout-step__label">Bestätigung</span>
+      </div>
+    </div>
+
+    <div class="checkout__grid">
+
+      <!-- LINKE SEITE -->
+      <div class="checkout__main reveal">
+
+        <!-- SCHRITT 1 -->
+        <section class="checkout-panel checkout-step-panel is-active" data-checkout-step="1">
+          <p class="checkout-panel__kicker">Schritt 1</p>
+          <h2 class="checkout-panel__title">Kontakt- &amp; Lieferdaten</h2>
+
+          <form class="checkout-form" action="#" method="post">
+
+            <div class="checkout-form__row">
+              <div class="checkout-field">
+                <label for="first-name" class="checkout-field__label">Vorname</label>
+                <input id="first-name" type="text" class="checkout-field__input" placeholder="Anna">
+              </div>
+
+              <div class="checkout-field">
+                <label for="last-name" class="checkout-field__label">Nachname</label>
+                <input id="last-name" type="text" class="checkout-field__input" placeholder="Muster">
+              </div>
+            </div>
+
+            <div class="checkout-field">
+              <label for="email" class="checkout-field__label">E-Mail</label>
+              <input id="email" type="email" class="checkout-field__input" placeholder="anna@example.com">
+            </div>
+
+            <div class="checkout-field">
+              <label for="street" class="checkout-field__label">Straße &amp; Hausnummer</label>
+              <input id="street" type="text" class="checkout-field__input" placeholder="Musterstraße 12">
+            </div>
+
+            <div class="checkout-form__row">
+              <div class="checkout-field">
+                <label for="zip" class="checkout-field__label">PLZ</label>
+                <input id="zip" type="text" class="checkout-field__input" placeholder="12345">
+              </div>
+
+              <div class="checkout-field">
+                <label for="city" class="checkout-field__label">Ort</label>
+                <input id="city" type="text" class="checkout-field__input" placeholder="Berlin">
+              </div>
+            </div>
+
+            <div class="checkout-field">
+              <label for="country" class="checkout-field__label">Land</label>
+              <select id="country" class="checkout-field__input checkout-field__select">
+                <option>Deutschland</option>
+                <option>Österreich</option>
+                <option>Schweiz</option>
+              </select>
+            </div>
+
+            <div class="checkout-panel__actions">
+              <a href="shop.html" class="btn btn-outline">Zurück</a>
+              <button type="button" class="btn btn-primary" data-checkout-next>Weiter</button>
+            </div>
+
+          </form>
+        </section>
+
+        <!-- SCHRITT 2 -->
+        <section class="checkout-panel checkout-step-panel" data-checkout-step="2">
+          <p class="checkout-panel__kicker">Schritt 2</p>
+          <h2 class="checkout-panel__title">Zahlungsart</h2>
+
+          <div class="checkout-form">
+
+            <div class="checkout-payment-options">
+
+              <label class="checkout-payment-option">
+                <input type="radio" name="payment-method" value="paypal">
+                <span class="checkout-payment-option__ui"></span>
+                <span class="checkout-payment-option__label">PayPal</span>
+              </label>
+
+              <label class="checkout-payment-option">
+                <input type="radio" name="payment-method" value="credit">
+                <span class="checkout-payment-option__ui"></span>
+                <span class="checkout-payment-option__label">Kreditkarte</span>
+              </label>
+
+              <label class="checkout-payment-option">
+                <input type="radio" name="payment-method" value="invoice">
+                <span class="checkout-payment-option__ui"></span>
+                <span class="checkout-payment-option__label">Rechnung</span>
+              </label>
+
+            </div>
+
+            <!-- Kredit Formula -->
+            <div class="checkout-payment-fields" data-credit-fields hidden>
+              <div class="checkout-field">
+                <label for="card-name" class="checkout-field__label">Name auf der Karte</label>
+                <input id="card-name" type="text" class="checkout-field__input" placeholder="Anna Muster">
+              </div>
+
+              <div class="checkout-field">
+                <label for="card-number" class="checkout-field__label">Kartennummer</label>
+                <input id="card-number" type="text" class="checkout-field__input" placeholder="1234 5678 9012 3456">
+              </div>
+
+              <div class="checkout-form__row">
+                <div class="checkout-field">
+                  <label for="card-expiry" class="checkout-field__label">Ablaufdatum</label>
+                  <input id="card-expiry" type="text" class="checkout-field__input" placeholder="MM/JJ">
+                </div>
+
+                <div class="checkout-field">
+                  <label for="card-cvc" class="checkout-field__label">CVC</label>
+                  <input id="card-cvc" type="text" class="checkout-field__input" placeholder="123">
+                </div>
+              </div>
+            </div>
+
+            <!-- Rechnung Form -->
+            <div class="checkout-payment-fields" data-invoice-fields hidden>
+              <div class="checkout-field">
+                <label for="invoice-company" class="checkout-field__label">Firma / Name</label>
+                <input id="invoice-company" type="text" class="checkout-field__input" placeholder="Muster GmbH">
+              </div>
+
+              <div class="checkout-field">
+                <label for="invoice-reference" class="checkout-field__label">Bestell- oder Referenznummer</label>
+                <input id="invoice-reference" type="text" class="checkout-field__input" placeholder="Optional">
+              </div>
+
+              <div class="checkout-field">
+                <label for="invoice-note" class="checkout-field__label">Hinweis für Rechnung</label>
+                <input id="invoice-note" type="text" class="checkout-field__input" placeholder="z. B. Kostenstelle">
+              </div>
+            </div>
+
+            <div class="checkout-panel__actions">
+              <button type="button" class="btn btn-outline" data-checkout-back>Zurück</button>
+              <button type="button" class="btn btn-primary" data-checkout-next>Weiter</button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SCHRITT 3 -->
+        <section class="checkout-panel checkout-step-panel" data-checkout-step="3">
+          <p class="checkout-panel__kicker">Schritt 3</p>
+          <h2 class="checkout-panel__title">Prüfung deiner Angaben</h2>
+
+          <div class="checkout-review">
+            <div class="checkout-review__block">
+              <p class="checkout-review__label">Name</p>
+              <p class="checkout-review__value" data-review-name>–</p>
+            </div>
+
+            <div class="checkout-review__block">
+              <p class="checkout-review__label">E-Mail</p>
+              <p class="checkout-review__value" data-review-email>–</p>
+            </div>
+
+            <div class="checkout-review__block">
+              <p class="checkout-review__label">Adresse</p>
+              <p class="checkout-review__value" data-review-address>–</p>
+            </div>
+
+            <div class="checkout-review__block">
+              <p class="checkout-review__label">Zahlungsart</p>
+              <p class="checkout-review__value" data-review-payment>–</p>
+            </div>
+          </div>
+
+          <div class="checkout-panel__actions">
+            <button type="button" class="btn btn-outline" data-checkout-back>Zurück</button>
+            <button type="button" class="btn btn-primary" data-checkout-next>Bestellen</button>
+          </div>
+        </section>
+
+        <!-- SCHRITT 4 -->
+        <section class="checkout-panel checkout-step-panel" data-checkout-step="4">
+          <p class="checkout-panel__kicker">Schritt 4</p>
+          <h2 class="checkout-panel__title">Bestellung abgeschlossen</h2>
+
+          <div class="checkout-success">
+            <p class="checkout-success__text">
+              Danke für deine Bestellung.
+            </p>
+
+            <p class="checkout-success__note">
+              Dies ist ein konzeptioneller Fake-Shop ohne echte Zahlungsabwicklung.
+            </p>
+          </div>
+
+          <div class="checkout-panel__actions">
+            <a href="shop.html" class="btn btn-primary">Zurück zum Shop</a>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RECHTE SEITE -->
+      <aside class="checkout__summary reveal">
+
+        <div class="checkout-summary-card">
+          <p class="checkout-summary-card__kicker">Bestellung</p>
+          <h2 class="checkout-summary-card__title">Übersicht</h2>
+
+          <div class="checkout-summary-card__product">
+            <img
+              src="assets/img/bookcover.png"
+              alt="Buchcover"
+              class="checkout-summary-card__image"
+            >
+
+            <div class="checkout-summary-card__product-info">
+              <p class="checkout-summary-card__product-title">Under the Surface</p>
+              <p class="checkout-summary-card__product-subtitle">Hardcover</p>
+            </div>
+          </div>
+
+          <div class="checkout-summary-card__lines">
+            <div class="checkout-summary-card__line">
+              <span>Produkt</span>
+              <span>24,90 €</span>
+            </div>
+
+            <div class="checkout-summary-card__line">
+              <span>Versand</span>
+              <span>0,00 €</span>
+            </div>
+          </div>
+
+          <div class="checkout-summary-card__total">
+            <span>Gesamt</span>
+            <span>24,90 €</span>
+          </div>
+
+          <p class="checkout-summary-card__note">
+            Dies ist ein konzeptioneller Demo-Shop ohne echte Zahlungsabwicklung.
+          </p>
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+</section>
+
+<div class="checkout-loader" data-loader>
+  <div class="checkout-loader__inner">
+    <img src="assets/img/elemente/loader.svg" alt="Loading" class="checkout-loader__icon"/>
+    <p>Demo-Zahlung...</p>
+  </div>
+</div>
+
+</body>
+</html>

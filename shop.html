@@ -1,0 +1,374 @@
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop</title>
+
+    <!-- Link Webprojekt Adobe Fonts -->
+     <link rel="stylesheet" href="https://use.typekit.net/xrw1yfu.css"/>
+     <!-- CSS -->
+    <link rel="stylesheet" href="css/pulsar.css" />
+     <!-- JS (defer = läuft nach dem HTML-Parsing) -->
+    <script src="js/main.js" defer></script> 
+    <link rel="preload" as="image" href="assets/img/shop.png"> <!-- Schneller Laden/vorher laden !? (Funktioniert eher semi) -->
+
+  </head>
+
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="assets/img/elemente/Pulsar Wordmark.svg" class="logo" />
+    </a>
+
+    <nav class="main-nav">
+      <button class="nav-toggle" type="button">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <ul class="nav-list" data-nav>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="results.html" class="nav-link">Results</a></li>
+        <li><a href="psycho.html" class="nav-link">Psycho</a></li>
+        <li><a href="shop.html" class="nav-link is-active ">Shop</a></li>
+      </ul>
+    </nav>
+
+
+    
+  </header>
+
+  <!-- Hero -->
+  <section class="shop-hero">
+
+    <div class="container shop-hero__grid">
+
+      <!-- LINKS: Text -->
+      <div class="shop-hero__content">
+
+        <h1 class="h1">
+          Book?<br>
+          Shop!
+        </h1>
+
+        <p class="muted">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+          Ut wisi enim ad minim veniam.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#shop-book" data-scroll>
+            Buy now
+          </a>
+        </div>
+
+      </div>
+
+      <!-- RECHTS: Bild -->
+      <div class="shop-hero__media">
+
+        <img src="assets/img/shop.png" alt="Shop Hero" class="shop-hero__image" loading="eager"/>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Abschnitt 1 -->
+  <section class="shop-features section">
+    <div class="container">
+
+      <div class="shop-features__grid">
+
+        <article class="shop-feature-card">
+          <img
+            src="assets/img/elemente/wis.svg"
+            alt=""
+            aria-hidden="true"
+            class="shop-feature-card__icon"
+          >
+          <span class="shop-feature-card__label">
+            Wissenschaftlich<br>fundiert
+          </span>
+        </article>
+
+        <article class="shop-feature-card">
+          <img
+            src="assets/img/elemente/link.svg"
+            alt=""
+            aria-hidden="true"
+            class="shop-feature-card__icon"
+          >
+          <span class="shop-feature-card__label">
+            Sofort<br>anwendbar
+          </span>
+        </article>
+
+        <article class="shop-feature-card">
+          <img
+            src="assets/img/elemente/prot.svg"
+            alt=""
+            aria-hidden="true"
+            class="shop-feature-card__icon"
+          >
+          <span class="shop-feature-card__label">
+            Für reale Projekte<br>entwickelt
+          </span>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SHOP – PRODUCT -->
+  <section id="shop-book" class="shop-product section">
+    <div class="container">
+
+      
+
+      <div class="shop-product__grid">
+
+        <div class="shop-product__cover-wrap reveal" aria-label="Buchcover"></div>
+
+        <!-- Hauptinfo Mitte -->
+        <article class="shop-product__main reveal">
+          <p class="shop-product__kicker">Book</p>
+
+          <h3 class="shop-product__title">
+            Under the Surface<br>
+          </h3>
+
+          <p class="shop-product__subtitle">
+            Was Werbung wirklich mit uns macht
+          </p>
+
+          <p class="shop-product__price">24,90 €</p>
+
+          <div class="shop-product__actions">
+            <a href="checkout.html" class="btn btn-primary shop-product__buy">
+              Jetzt kaufen
+            </a>
+
+            <button type="button" class="btn btn-outline shop-product__sample" data-sample-open>
+              Leseprobe
+            </button>
+          </div>
+        </article>
+
+        <!-- rechte Infokarten -->
+        <div class="shop-product__side reveal">
+
+          <article class="shop-product-info-card">
+            <img src="assets/img/elemente/bookicon.svg" alt="" aria-hidden="true" class="shop-product-info-card__icon">
+
+            <div class="shop-product-info-card__text">
+              <span class="shop-product-info-card__label">Format</span>
+              <span class="shop-product-info-card__value">Hardcover</span>
+            </div>
+          </article>
+
+          <article class="shop-product-info-card">
+            <img
+              src="assets/img/elemente/side.svg"
+              alt=""
+              aria-hidden="true"
+              class="shop-product-info-card__icon"
+            >
+            <div class="shop-product-info-card__text">
+              <span class="shop-product-info-card__label">Umfang</span>
+              <span class="shop-product-info-card__value">ca. 120 Seiten</span>
+            </div>
+          </article>
+
+          <article class="shop-product-payments-card">
+            <div class="shop-product-payments-card__icons">
+
+              <div class="shop-product-payments-card__item">
+                <img
+                  src="assets/img/elemente/paypal.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="shop-product-payments-card__icon"
+                >
+                <span>PayPal</span>
+              </div>
+
+              <div class="shop-product-payments-card__item">
+                <img
+                  src="assets/img/elemente/credit.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="shop-product-payments-card__icon"
+                >
+                <span>Kredit</span>
+              </div>
+
+              <div class="shop-product-payments-card__item">
+                <img
+                  src="assets/img/elemente/rech.svg"
+                  alt=""
+                  aria-hidden="true"
+                  class="shop-product-payments-card__icon"
+                >
+                <span>Rechnung</span>
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="shop-trust section">
+    <div class="container">
+
+      <div class="shop-trust__grid">
+
+        <div class="shop-trust__item">
+          <img
+            src="assets/img/elemente/sbox.svg"
+            alt=""
+            aria-hidden="true"
+            class="shop-trust__icon"
+          >
+          <span>Kostenloser Versand</span>
+        </div>
+
+        <div class="shop-trust__item">
+          <img
+            src="assets/img/elemente/ship.svg"
+            alt=""
+            aria-hidden="true"
+            class="shop-trust__icon"
+          >
+          <span>Schnelle Lieferung</span>
+        </div>
+
+        <div class="shop-trust__item">
+          <img
+            src="assets/img/elemente/spay.svg"
+            alt=""
+            aria-hidden="true"
+            class="shop-trust__icon"
+          >
+          <span>Sichere Zahlung</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Leseprobe -->
+<div class="sample-modal" data-sample-modal hidden>
+  <div class="sample-modal__overlay" data-sample-close></div>
+
+  <div class="sample-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="sample-modal-title">
+    <button type="button" class="sample-modal__close" aria-label="Leseprobe schließen" data-sample-close>
+      ×
+    </button>
+
+    <p class="sample-modal__kicker">Leseprobe</p>
+    <h2 class="sample-modal__title" id="sample-modal-title">Under the Surface</h2>
+
+    <div class="sample-modal__content">
+      <p>
+        Werbung begegnet uns täglich – oft subtiler, als wir denken.
+        Farben, Formen, Typografie und Bildwelten beeinflussen unsere Wahrnehmung,
+        noch bevor wir Inhalte bewusst verarbeiten.
+      </p>
+
+      <p>
+        Dieses Buch zeigt, wie Design und Werbepsychologie zusammenwirken,
+        welche Mechanismen im Hintergrund aktiv sind
+        und warum visuelle Entscheidungen weit mehr auslösen können als reine Ästhetik.
+      </p>
+
+      <p>
+        Die Leseprobe gibt einen ersten Einblick in zentrale Themen wie
+        Wahrnehmung, Trigger, implizite Wirkung und die psychologische Kraft
+        gestalterischer Mittel.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="cookie-banner" data-cookie-banner hidden>
+      <div class="cookie-banner__inner">
+
+          <img
+          src="assets/img/elemente/cookie.svg"
+          alt=""
+          aria-hidden="true"
+          class="cookie-banner__icon"
+          >
+
+          <div class="cookie-banner__content">
+          <p class="cookie-banner__title">Dieser Cookie ist nicht essbar.</p>
+          <p class="cookie-banner__text">
+              Aber er beeinflusst trotzdem deine Entscheidungen.
+          </p>
+          </div>
+
+          <div class="cookie-banner__actions">
+          <button type="button" class="btn btn-outline cookie-banner__button" data-cookie-decline>
+              Nur notwendige
+          </button>
+
+          <button type="button" class="btn btn-primary cookie-banner__button" data-cookie-accept>
+              Einverstanden
+          </button>
+          </div>
+
+      </div>
+  </div>
+
+
+
+
+
+<footer class="site-footer">
+
+  <div class="container site-footer__inner">
+
+    <!-- LINKS: Logo -->
+    <div class="site-footer__left">
+      <img src="assets/img/elemente/footer.svg" alt="Pulsar Logo" class="site-footer__logo">
+    </div>
+
+    <!-- RECHTS: Navigation -->
+    <nav class="site-footer__nav">
+      <a href="index.html">Home</a>
+      <a href="results.html">Results</a>
+      <a href="psycho.html">Psycho</a>
+      <a href="shop.html">Shop</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+
+  </div>
+
+  <!-- Linie -->
+  <div class="site-footer__divider"></div>
+
+  <!-- Copyright -->
+  <div class="site-footer__bottom">
+    <p>©2026 Pulsar All rights reserved</p>
+  </div>
+
+</footer>
+
+
+
+</body>
+</html>

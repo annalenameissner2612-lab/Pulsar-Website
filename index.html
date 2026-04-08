@@ -1,0 +1,261 @@
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pulsar</title>
+
+    <!-- Link Webprojekt Adobe Fonts -->
+     <link rel="stylesheet" href="https://use.typekit.net/xrw1yfu.css"/>
+     <!-- CSS -->
+    <link rel="stylesheet" href="css/pulsar.css" />
+     <!-- JS (defer = läuft nach dem HTML-Parsing) -->
+    <script src="js/main.js" defer></script>
+    <link rel="preload" as="image" href="assets/img/hero-man.png">
+
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+        <a href="index.html" class="logo-link" aria-label="Zur Startseite">
+            <img src="assets/img/elemente/Pulsar Wordmark.svg" alt="Pulsar Logo" class="logo">
+        </a>
+
+        <nav class="main-nav" aria-label="MainNav">
+            <button class="nav-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false">
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+
+            <ul class="nav-list" data-nav>
+                <li><a href="index.html" class="nav-link is-active">Home</a></li>
+                <li><a href="results.html" class="nav-link">Results</a></li>
+
+                <li><a href="psycho.html" class="nav-link">Psycho</a></li>
+                <li><a href="shop.html" class="nav-link">Shop</a></li>
+            </ul>
+        </nav>
+
+        <!-- BF Button -->
+        <div class="a11y-control">
+            <button class="a11y-toggle" aria-pressed="false">
+                <span class="a11y-toggle__track">
+                    <span class="a11y-toggle__thumb"></span>
+                </span>
+            </button>
+
+            <span class="a11y-label">Barrierefrei</span>
+        </div>
+
+
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+    <div class="hero-stage">
+
+        <!-- Hintergrund Mensch -->
+        <img src="assets/img/Hero-Man.png" alt="" aria-hidden="true" class="hero-figure" loading="eager">
+
+        <div class="container hero-shell">
+            <div class="hero-center reveal">
+
+                <!-- PULSAR SVG -->
+                <img src="assets/img/elemente/PulsarLogoAbstrakt.svg" alt="Pulsar" class="hero-logo">
+
+                <!-- Button -->
+                <div class="hero-actions">
+                <a class="btn btn-primary" href="#top-things" data-scroll>View Subjects</a>
+                </div>
+
+                <!-- Symbols SVG -->
+                <img src="assets/img/elemente/symbols.svg" alt="" aria-hidden="true" class="hero-symbols">
+
+            </div>
+        </div>
+
+    </div>
+    </section>
+
+    <!-- TOP THINGS -->
+    <section id="top-things" class="section">
+        <div class="container">
+            <header class="section-head reveal">
+                <h2 class="h2">Top Things</h2>
+                <p class="muted">Ein kurzer Teaser-Text wie im Wireframe. Später ersetzen wir Lorem durch echte Inhalte.</p>
+            </header>
+
+            <div class="cards-2">
+                <!-- ABOUT ME -->
+                 <article class="card reveal">
+                    <p class="card-kicker">About me</p>
+                    <h3 class="h3">Anna Meißner</h3>
+                    <p class="muted small">The Designer</p>
+
+                    <p class="body">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam.
+                    </p>
+
+                    <div class="card-footer">
+                        <img class="signature" src="assets/img/elemente/signature.svg" alt="Unterschrift Anna"/>
+                    </div>
+                 </article>
+
+                <!-- ABOUT PROJECT --> 
+                 <article class="card reveal">
+                    <p class="card-kicker">About project</p>
+                    <h3 class="h3">Pulsar</h3>
+                    <p class="muted small">The Design</p>
+
+                    <p class="body">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+                        tincidunt ut laoreet dolore magna aliquam.
+                    </p>
+                 </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="section-quote">
+        <div class="container reveal quote-inner">
+            <img src="assets/img/elemente/quote.svg" alt="Zitat" class="quote-svg"/>
+        </div>
+    </section>
+
+    <!-- IDEA -->
+    <section id="results" class="section">
+        <div class="container">
+            <header class="section-head reveal">
+                <h2 class="h2">Idea</h2>
+            </header>
+            <div class="idea-grid">
+                <!-- großes Bild -->
+                 <div class="idea-left">
+                    <div class="idea-media reveal" role="img" aria-label="Platzhalter Bild"></div>
+                    <div class="idea-caption reveal">
+                        <p class="idea-caption__title">PULSAR</p>
+                        <p class="muted small">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                        </p>
+                    </div>
+                 </div>
+
+                 <!-- steps -->
+                <div class="idea-steps">
+                    <article class="step reveal">
+                      <img class="step-num" src="assets/img/elemente/Kasten 1.svg" alt="Schritt 1" loading="lazy"/>
+                      <div class="step-body">
+                            <p class="muted step-text">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                            </p>
+                      </div>
+                    </article>
+
+                    <article class="step reveal">
+                        <img class="step-num" src="assets/img/elemente/Kasten 2.svg" alt="Schritt 2" loading="lazy"/>
+                        <div class="step-body">
+                            <p class="muted step-text">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="step reveal">
+                        <img class="step-num" src="assets/img/elemente/Kasten 3.svg" alt="Schritt 3" loading="lazy"/>
+                        <div class="step-body">
+                            <p class="muted step-text">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <div class="cookie-banner" data-cookie-banner hidden>
+        <div class="cookie-banner__inner">
+
+            <img
+            src="assets/img/elemente/cookie.svg"
+            alt=""
+            aria-hidden="true"
+            class="cookie-banner__icon"
+            >
+
+            <div class="cookie-banner__content">
+            <p class="cookie-banner__title">Dieser Cookie ist nicht essbar.</p>
+            <p class="cookie-banner__text">
+                Aber er beeinflusst trotzdem deine Entscheidungen.
+            </p>
+            </div>
+
+            <div class="cookie-banner__actions">
+            <button type="button" class="btn btn-outline cookie-banner__button" data-cookie-decline>
+                Nur notwendige
+            </button>
+
+            <button type="button" class="btn btn-primary cookie-banner__button" data-cookie-accept>
+                Einverstanden
+            </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <footer class="site-footer">
+
+        <div class="container site-footer__inner">
+
+            <!-- LINKS: Logo -->
+            <div class="site-footer__left">
+            <img src="assets/img/elemente/footer.svg" alt="Pulsar Logo" class="site-footer__logo">
+            </div>
+
+            <!-- RECHTS: Navigation -->
+            <nav class="site-footer__nav">
+            <a href="index.html">Home</a>
+            <a href="results.html">Results</a>
+            <a href="psycho.html">Psycho</a>
+            <a href="shop.html">Shop</a>
+            <a href="impressum.html">Impressum</a>
+            </nav>
+
+        </div>
+
+        <!-- Linie -->
+        <div class="site-footer__divider"></div>
+
+        <!-- Copyright -->
+        <div class="site-footer__bottom">
+            <p>©2026 Pulsar All rights reserved</p>
+        </div>
+
+    </footer>
+
+
+
+    <!-- <button
+        type="button"
+        style="position:fixed; right:16px; bottom:16px; z-index:9999;"
+        onclick="localStorage.removeItem('pulsar-cookie-choice'); location.reload();"
+        >
+        Cookie Banner reset
+        </button> -->
+
+
+  </body>
+</html>

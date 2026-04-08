@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulsar – Results</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/xrw1yfu.css"/>
+  <link rel="stylesheet" href="css/pulsar.css" />
+  <script src="js/main.js" defer></script>
+</head>
+
+<body>
+
+  <!-- HEADER (identisch wie auf der Startseite) -->
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="assets/img/elemente/Pulsar Wordmark.svg" class="logo" />
+    </a>
+
+    <nav class="main-nav">
+      <button class="nav-toggle" type="button">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <ul class="nav-list" data-nav>
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="results.html" class="nav-link is-active">Results</a></li>
+
+        <li><a href="psycho.html" class="nav-link">Psycho</a></li>
+
+        <li><a href="shop.html" class="nav-link">Shop</a></li>
+      </ul>
+    </nav>
+
+    
+  </header>
+
+
+  <!-- Results Hero Section -->
+  <section class="hero-results section">
+    <div class="container hero-results__grid">
+
+      <div class="hero-results__copy reveal">
+        <h1 class="h1">
+          Project Pulsar <br />
+          Open your Mind <br />
+        </h1>
+
+        <p class="lead">
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+          tincidunt ut laoreet dolore magna aliquam.
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+        </p>
+
+        <div class="hero-results__actions">
+          <a class="btn btn-primary" href="#results-overview" data-scroll>
+            View Results
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-results__cards reveal" aria-hidden="true">
+        <div class="hero-results__card hero-results__card--a"></div>
+        <div class="hero-results__card hero-results__card--b"></div>
+        <div class="hero-results__card hero-results__card--c"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Hover Cards aktivieren die Results Artikel -->
+  <section id="results-overview" class="results-overview section">
+  <div class="container">
+    <header class="results-overview__head reveal">
+      <h2 class="h2">Results</h2>
+      <p class="muted">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+      </p>
+    </header>
+
+    <div class="results-cards reveal">
+      <button class="results-card" type="button" data-result="publisher">
+        <span class="results-card__image">
+          <img src="assets/img/elemente/publishericon.svg" alt="">
+        </span>
+        <span class="results-card__label">Publisher</span>
+      </button>
+
+      <button class="results-card" type="button" data-result="book">
+        <span class="results-card__image">
+          <img src="assets/img/elemente/bookicon.svg" alt="">
+        </span>
+        <span class="results-card__label">Book</span>
+      </button>
+
+      <button class="results-card" type="button" data-result="poster">
+        <span class="results-card__image">
+          <img src="assets/img/elemente/postericon.svg" alt="">
+        </span>
+        <span class="results-card__label">Poster</span>
+      </button>
+
+      <button class="results-card" type="button" data-result="website">
+        <span class="results-card__image">
+          <img src="assets/img/elemente/websiteicon.svg" alt="">
+        </span>
+        <span class="results-card__label">Website</span>
+      </button>
+    </div>
+  </div>
+  </section>
+
+  <!-- Artikel -->
+  <section class="results-stage section">
+    <div class="container">
+      <div class="results-panel reveal">
+
+       <!-- linke große Bildfläche -->
+        <div class="results-panel__media">
+          <img src="assets/img/Pulsarbrand.png" alt="Pulsar Branding" class="results-panel__image" id="results-media-image">
+        </div>
+
+       <!-- rechte Inhaltsseite -->
+        <div class="results-panel__content">
+
+          <!-- PUBLISHER -->
+          <article class="result-article is-visible" data-article="publisher">
+            <div class="result-card">
+            <div class="result-card__topline">Publisher</div>
+
+            <div class="result-card__head">
+              <h3 class="result-card__title">Pulsar Verlag</h3>
+              <img src="assets/img/elemente/neurohand.svg" alt="" class="result-card__hero-icon" aria-hidden="true"/>
+            </div>
+
+            <div class="result-card__text">
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+              </p>
+            </div>
+          </div>
+
+          <div class="result-icons">
+            <div class="result-icon-card">
+              <img src="assets/img/elemente/brain.svg" alt="" class="icon-brain" aria-hidden="true" />
+              <span class="result-icon-card__label">Psychological Trigger</span>
+            </div>
+            <div class="result-icon-card">
+              <img src="assets/img/elemente/neuro.svg" alt="" aria-hidden="true" />
+              <span class="result-icon-card__label">Mirror Neurons</span>
+            </div>
+            <div class="result-icon-card">
+              <img src="assets/img/elemente/muster.svg" alt="" aria-hidden="true" />
+              <span class="result-icon-card__label">Pattern Recognition</span>
+            </div>
+          </div>
+          </article>
+
+          <!-- BOOK -->
+          <article class="result-article" data-article="book">
+            <div class="result-card">
+              <div class="result-card__topline">Book</div>
+
+              <div class="result-card__head">
+                <h3 class="result-card__title">Under the Surface</h3>
+                <img src="assets/img/elemente/entscheidung.svg" alt="" class="result-card__hero-icon" aria-hidden="true"/>
+              </div>
+
+              <div class="result-card__text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                  euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                  euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                </p>
+              </div>
+            </div>
+
+            <div class="result-icons">
+              <div class="result-icon-card">
+                <img src="assets/img/elemente/bewusstsein.svg" alt="" aria-hidden="true" />
+                <span class="result-icon-card__label">Subconscious</span>
+              </div>
+
+              <div class="result-icon-card">
+                <img src="assets/img/elemente/farben.svg" alt="" aria-hidden="true" />
+                <span class="result-icon-card__label">Color Psychology</span>
+              </div>
+
+              <div class="result-icon-card">
+                <img src="assets/img/elemente/erkennen.svg" alt="" aria-hidden="true" />
+                <span class="result-icon-card__label">Attention</span>
+              </div>
+            </div>
+          </article>
+
+
+
+          <!-- POSTER -->
+          <article class="result-article" data-article="poster">
+
+            <div class="poster-stage reveal">
+
+              <!-- LINKS: Poster-Fächer -->
+              <div class="poster-fan">
+
+                <button class="poster-fan__item poster-fan__item--left is-left" type="button" data-poster="poster1"> <!-- zusätzliche class "is-(Zustand) anpassen" -->
+                  <span class="poster-fan__image" aria-hidden="true"></span>
+                  <span class="poster-fan__label">Poster 1</span>
+                </button>
+
+                <button class="poster-fan__item poster-fan__item--center is-active is-center" type="button" data-poster="poster2">
+                  <span class="poster-fan__image" aria-hidden="true"></span>
+                  <span class="poster-fan__label">Poster 2</span>
+                </button>
+
+                <button class="poster-fan__item poster-fan__item--right is-right" type="button" data-poster="poster3">
+                  <span class="poster-fan__image" aria-hidden="true"></span>
+                  <span class="poster-fan__label">Poster 3</span>
+                </button>
+
+              </div>
+
+              <!-- RECHTS: Weiße Info-Box -->
+              <div class="poster-info reveal">
+
+                <!-- Poster 1 -->
+                <div class="poster-info__panel" data-poster-panel="poster1">
+                  <div class="poster-info__topline">Poster</div>
+                  <h3 class="poster-info__title">Color Psychology</h3>
+
+                  <p class="poster-info__text">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                  </p>
+
+                  <div class="poster-info__actions">
+                    <a class="btn btn-primary poster-download-btn" href="assets/downloads/poster1.pdf" download>Download PDF</a>
+
+                    <a class="poster-download-icon" href="assets/downloads/poster1.pdf" download aria-label="Poster 1 herunterladen">
+                      <img src="assets/img/elemente/download.svg" alt="" aria-hidden="true">
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Poster 2 -->
+                <div class="poster-info__panel is-visible" data-poster-panel="poster2">
+                  <div class="poster-info__topline">Poster</div>
+                  <h3 class="poster-info__title">Trigger</h3>
+
+                  <p class="poster-info__text">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                  </p>
+
+                  <div class="poster-info__actions">
+                    <a class="btn btn-primary poster-download-btn" href="assets/downloads/poster2.pdf" download>
+                      Download PDF
+                    </a>
+
+                    <a class="poster-download-icon" href="assets/downloads/poster2.pdf" download aria-label="Poster 2 herunterladen">
+                      <img src="assets/img/elemente/download.svg" alt="" aria-hidden="true">
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Poster 3 -->
+                <div class="poster-info__panel" data-poster-panel="poster3">
+                  <div class="poster-info__topline">Poster</div>
+                  <h3 class="poster-info__title">Perception</h3>
+
+                  <p class="poster-info__text">
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                    euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                  </p>
+
+                  <div class="poster-info__actions">
+                    <a class="btn btn-primary poster-download-btn" href="assets/downloads/poster3.pdf" download>
+                      Download PDF
+                    </a>
+
+                    <a class="poster-download-icon" href="assets/downloads/poster3.pdf" download aria-label="Poster 3 herunterladen">
+                      <img src="assets/img/elemente/download.svg" alt="" aria-hidden="true">
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- UNTEN: 3 Inhaltsblöcke -->
+             <div class="poster-points">
+
+              <!-- Poster 1 Punkte -->
+              <div class="poster-points__panel" data-poster-points="poster1">
+                <div class="poster-points__grid">
+                <div class="poster-point">
+                  <h4 class="poster-point__title">Inhalte 1</h4>
+                   <p class="poster-point__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                </div>
+
+                <div class="poster-point">
+                  <h4 class="poster-point__title">Inhalte 2</h4>
+                  <p class="poster-point__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                </div>
+
+                    <div class="poster-point">
+                      <h4 class="poster-point__title">Inhalte 3</h4>
+                      <p class="poster-point__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                    </div>
+                  </div>
+              </div>
+
+              <!-- Poster 2 Punkte -->
+              <div class="poster-points__panel is-visible" data-poster-points="poster2">
+                <div class="poster-points__grid">
+                  <div class="poster-point">
+                    <h4 class="poster-point__title">Inhalte 1</h4>
+                    <p class="poster-point__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                  </div>
+
+                  <div class="poster-point">
+                    <h4 class="poster-point__title">Inhalte 2</h4>
+                    <p class="poster-point__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                  </div>
+
+                  <div class="poster-point">
+                    <h4 class="poster-point__title">Inhalte 3</h4>
+                    <p class="poster-point__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Poster 3 Punkte -->
+              <div class="poster-points__panel" data-poster-points="poster3">
+                <div class="poster-points__grid">
+                  <div class="poster-point">
+                    <h4 class="poster-point__title">Inhalte 1</h4>
+                    <p class="poster-point__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                  </div>
+
+                  <div class="poster-point">
+                    <h4 class="poster-point__title">Inhalte 2</h4>
+                    <p class="poster-point__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                  </div>
+
+                  <div class="poster-point">
+                    <h4 class="poster-point__title">Inhalte 3</h4>
+                    <p class="poster-point__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </article>
+
+
+
+          
+
+        <!-- WEBSITE -->
+          <article class="result-article" data-article="website">
+            <div class="result-card">
+              <div class="result-card__topline">Website</div>
+
+              <div class="result-card__head">
+                <h3 class="result-card__title">http://www.pulsar.de</h3>
+              </div>
+
+              <div class="result-card__text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                  euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                  euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                </p>
+              </div>
+            </div>
+
+            <div class="result-icons">
+              <div class="result-icon-card">
+                <img src="assets/img/elemente/html.svg" alt="" aria-hidden="true" />
+                <span class="result-icon-card__label">HTML</span>
+              </div>
+
+              <div class="result-icon-card">
+                <img src="assets/img/elemente/css.svg" alt="" aria-hidden="true" />
+                <span class="result-icon-card__label">CSS</span>
+              </div>
+
+              <div class="result-icon-card">
+                <img src="assets/img/elemente/js.svg" alt="" aria-hidden="true" />
+                <span class="result-icon-card__label">JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+  <div class="cookie-banner" data-cookie-banner hidden>
+        <div class="cookie-banner__inner">
+
+            <img
+            src="assets/img/elemente/cookie.svg"
+            alt=""
+            aria-hidden="true"
+            class="cookie-banner__icon"
+            >
+
+            <div class="cookie-banner__content">
+            <p class="cookie-banner__title">Dieser Cookie ist nicht essbar.</p>
+            <p class="cookie-banner__text">
+                Aber er beeinflusst trotzdem deine Entscheidungen.
+            </p>
+            </div>
+
+            <div class="cookie-banner__actions">
+            <button type="button" class="btn btn-outline cookie-banner__button" data-cookie-decline>
+                Nur notwendige
+            </button>
+
+            <button type="button" class="btn btn-primary cookie-banner__button" data-cookie-accept>
+                Einverstanden
+            </button>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+  <footer class="site-footer">
+
+    <div class="container site-footer__inner">
+
+      <!-- LINKS: Logo -->
+      <div class="site-footer__left">
+        <img src="assets/img/elemente/footer.svg" alt="Pulsar Logo" class="site-footer__logo">
+      </div>
+
+      <!-- RECHTS: Navigation -->
+      <nav class="site-footer__nav">
+        <a href="index.html">Home</a>
+        <a href="results.html">Results</a>
+        <a href="psycho.html">Psycho</a>
+        <a href="shop.html">Shop</a>
+        <a href="impressum.html">Impressum</a>
+      </nav>
+
+    </div>
+
+    <!-- Linie -->
+    <div class="site-footer__divider"></div>
+
+    <!-- Copyright -->
+    <div class="site-footer__bottom">
+      <p>©2026 Pulsar All rights reserved</p>
+    </div>
+
+  </footer>
+
+
+</body>
+</html>

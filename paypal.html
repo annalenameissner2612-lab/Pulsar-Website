@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PayPal – Demo</title>
+
+  <link rel="stylesheet" href="https://use.typekit.net/xrw1yfu.css"/>
+  <link rel="stylesheet" href="css/pulsar.css" />
+  <script src="js/main.js" defer></script>
+</head>
+
+
+
+
+
+
+
+
+<body class="paypal-demo-page">
+
+  <main class="paypal-demo">
+    <div class="paypal-demo__card">
+
+      <div class="paypal-demo__brand">PayPal</div>
+
+      <p class="paypal-demo__kicker">Demo-Zahlung</p>
+      <h1 class="paypal-demo__title">Mit PayPal anmelden</h1>
+
+      <p class="paypal-demo__text">
+        Dies ist eine simulierte Zahlungsseite für den Demo-Shop.
+      </p>
+
+      <div class="paypal-demo__fields">
+        <div class="checkout-field">
+          <label for="paypal-mail" class="checkout-field__label">E-Mail</label>
+          <input id="paypal-mail" type="email" class="checkout-field__input" placeholder="name@example.com">
+        </div>
+
+        <div class="checkout-field">
+          <label for="paypal-password" class="checkout-field__label">Passwort</label>
+          <input id="paypal-password" type="password" class="checkout-field__input" placeholder="••••••••">
+        </div>
+      </div>
+
+      <div class="paypal-demo__summary">
+        <div class="paypal-demo__line">
+          <span>Produkt</span>
+          <span>Under the Surface</span>
+        </div>
+
+        <div class="paypal-demo__line">
+          <span>Betrag</span>
+          <span>24,90 €</span>
+        </div>
+      </div>
+
+      <div class="paypal-demo__actions">
+        <a href="checkout.html?paypal=cancel" class="btn btn-outline">Abbrechen</a>
+        <button type="button" class="btn btn-primary" data-paypal-demo-submit>
+          Bezahlen
+        </button>
+      </div>
+
+      <p class="paypal-demo__note">
+        Demo-Checkout ohne echte Zahlungsabwicklung.
+      </p>
+
+    </div>
+  </main>
+
+</body>
+</html>
