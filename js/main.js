@@ -1,26 +1,37 @@
 /* =========================================================
-   Pulsar – main.js (Beginner-friendly, modern)
+   PULSAR – main.js
+   alles an Interaktionen, was man sich auch hätte aufteilen können,
+   aber jetzt ist es halt hier drin
 ========================================================= */
 
 (function () {
   "use strict";
 
-  // Helpers
+  /* =========================================================
+     HELPERS
+     keine Raketenwissenschaft, nur querySelector in kurz
+  ========================================================= */
   const $ = (sel, parent = document) => parent.querySelector(sel);
   const $$ = (sel, parent = document) => Array.from(parent.querySelectorAll(sel));
 
-  // Elements
+  /* =========================================================
+     BASIS ELEMENTE
+     Sachen die auf mehreren Seiten gebraucht werden
+  ========================================================= */
   const header = $(".site-header");
   const mainNav = $(".main-nav");
   const navToggle = $(".nav-toggle");
   const navList = $("[data-nav]");
-  
 
-  // ---------------------------------------------------------
-  // 1) Dynamische Header-Höhe für scroll-margin-top
-  // ---------------------------------------------------------
+
+
+  /* =========================================================
+     1) HEADER-HÖHE DYNAMISCH IN CSS-VARIABLE SCHREIBEN
+     weil sticky header + anchor links sonst wieder alles versetzen
+  ========================================================= */
   function setHeaderHeightVar() {
     if (!header) return;
+
     const h = header.getBoundingClientRect().height;
     document.documentElement.style.setProperty("--header-h", `${Math.round(h)}px`);
   }
@@ -29,17 +40,22 @@
   window.addEventListener("load", setHeaderHeightVar);
   setHeaderHeightVar();
 
-  // ---------------------------------------------------------
-  // 3) Mobile Menu Toggle
-  // ---------------------------------------------------------
+
+
+  /* =========================================================
+     2) MOBILE NAV TOGGLE
+     klassisches burger-menü auf / zu
+  ========================================================= */
   function closeMobileMenu() {
     if (!mainNav || !navToggle) return;
+
     mainNav.dataset.open = "false";
     navToggle.setAttribute("aria-expanded", "false");
   }
 
   function toggleMobileMenu() {
     if (!mainNav || !navToggle) return;
+
     const isOpen = mainNav.dataset.open === "true";
     mainNav.dataset.open = isOpen ? "false" : "true";
     navToggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
@@ -50,9 +66,11 @@
     navToggle.addEventListener("click", toggleMobileMenu);
   }
 
-  // Klick außerhalb schließt Menü (mobile)
+  // wenn man irgendwo daneben hinklickt, menü wieder zu
+  // weil offene mobile navs, die ewig rumhängen, einfach nerven
   document.addEventListener("click", (e) => {
     if (!mainNav) return;
+
     const isOpen = mainNav.dataset.open === "true";
     if (!isOpen) return;
 
@@ -60,11 +78,12 @@
     if (!clickedInside) closeMobileMenu();
   });
 
-  
 
-  // ---------------------------------------------------------
-  // 5) Smooth scroll (sauber mit Header-Offset)
-  // ---------------------------------------------------------
+
+  /* =========================================================
+     3) SMOOTH SCROLL MIT HEADER OFFSET
+     damit der sticky header nicht jedes ziel halb auffrisst
+  ========================================================= */
   function scrollToHash(hash) {
     const target = document.querySelector(hash);
     if (!target) return;
@@ -75,7 +94,8 @@
     window.scrollTo({ top: y, behavior: "smooth" });
   }
 
-  // alle internen Links (#...) abfangen
+  // alle internen hash-links abfangen
+  // sonst springt der browser stumpf irgendwohin und ignoriert unseren offset
   document.addEventListener("click", (e) => {
     const a = e.target.closest('a[href^="#"]');
     if (!a) return;
@@ -83,7 +103,6 @@
     const hash = a.getAttribute("href");
     if (!hash || hash === "#") return;
 
-    
     closeMobileMenu();
 
     e.preventDefault();
@@ -91,9 +110,12 @@
     scrollToHash(hash);
   });
 
-  // ---------------------------------------------------------
-  // 6) Reveal on scroll (IntersectionObserver)
-  // ---------------------------------------------------------
+
+
+  /* =========================================================
+     4) REVEAL ON SCROLL
+     eigentlich Standardkram, aber ohne observer wirkt die Seite halt tot
+  ========================================================= */
   const revealEls = $$(".reveal");
 
   if ("IntersectionObserver" in window && revealEls.length) {
@@ -111,12 +133,16 @@
 
     revealEls.forEach((el) => io.observe(el));
   } else {
+    // fallback falls browser wieder meint speziell zu sein
     revealEls.forEach((el) => el.classList.add("is-visible"));
   }
 
-  // ---------------------------------------------------------
-  // 7) Results Cards -> Artikel umschalten
-  // ---------------------------------------------------------
+
+
+  /* =========================================================
+     5) RESULTS – MENÜKARTEN SCHALTEN ARTIKEL UM
+     hover zeigt an, klick lockt fest
+  ========================================================= */
   const resultCards = Array.from(document.querySelectorAll(".results-card"));
   const resultArticles = Array.from(document.querySelectorAll(".result-article"));
   const resultsStage = document.querySelector(".results-stage");
@@ -136,13 +162,14 @@
       article.classList.toggle("is-visible", article === target);
     });
 
-    // Bild im linken Frame wechseln
+    // linkes großes bild mitwechseln
+    // weil sonst rechts was anderes steht als links und dann ist das ganze system sinnlos
     const mediaImage = document.getElementById("results-media-image");
     if (!mediaImage) return;
 
     const images = {
       publisher: { src: "assets/img/Pulsarbrand.png", class: "img-publisher" },
-      book: { src: "assets/img/Bookcover.png", class: "img-book" },
+      book: { src: "assets/img/bookcover.png", class: "img-book" },
       website: { src: "assets/img/Code.png", class: "img-website" }
     };
 
@@ -174,15 +201,16 @@
   resultCards.forEach((card) => {
     const name = card.dataset.result;
 
-    // Hover: nur wenn nichts gelockt ist
+    // hover nur solange nichts festgelockt ist
     card.addEventListener("mouseenter", () => {
       if (lockedResult) return;
       if (!getArticleByName(name)) return;
+
       setVisibleArticle(name);
       setActiveCard(name);
     });
 
-    // Klick: Panel fixieren / lösen + scroll
+    // klick = festsetzen oder wieder lösen
     card.addEventListener("click", () => {
       if (!getArticleByName(name)) return;
 
@@ -199,8 +227,8 @@
     });
   });
 
-  // Wenn Maus die ganze Kartenreihe verlässt:
-  // zurück zum gelockten Panel oder Publisher
+  // wenn maus die ganze kartenreihe verlässt:
+  // entweder zurück zum gelockten artikel oder auf publisher als default
   if (resultsCardsRow) {
     resultsCardsRow.addEventListener("mouseleave", () => {
       if (lockedResult) {
@@ -213,13 +241,16 @@
     });
   }
 
-  // Initialzustand
+  // initial halt publisher, irgendwas muss ja zuerst sichtbar sein
   setVisibleArticle("publisher");
   setActiveCard("publisher");
 
-  // ---------------------------------------------------------
-  // 8) Poster Fan -> interner Wechsel
-  // ---------------------------------------------------------
+
+
+  /* =========================================================
+     6) POSTER FAN
+     die dämliche fächerlogik für die poster
+  ========================================================= */
   const posterFanItems = Array.from(document.querySelectorAll(".poster-fan__item"));
   const posterInfoPanels = Array.from(document.querySelectorAll(".poster-info__panel"));
   const posterPointsPanels = Array.from(document.querySelectorAll(".poster-points__panel"));
@@ -275,10 +306,12 @@
       }
     });
 
+    // rechte infobox passend mitwechseln
     posterInfoPanels.forEach((panel) => {
       panel.classList.toggle("is-visible", panel.dataset.posterPanel === name);
     });
 
+    // untere punkte passend mitwechseln
     posterPointsPanels.forEach((panel) => {
       panel.classList.toggle("is-visible", panel.dataset.posterPoints === name);
     });
@@ -308,16 +341,18 @@
     });
   }
 
-  // Startzustand
+  // standardmäßig poster 2 in die mitte
   if (posterFanItems.length) {
     activePoster = "";
     setPosterState("poster2");
   }
 
 
-  // ---------------------------------------------------------
-  // 9) Psycho Design Cards -> Hover + Klick Lock
-  // ---------------------------------------------------------
+
+  /* =========================================================
+     7) PSYCHO – DESIGN CARDS
+     hover zeigt auf, klick lockt fest
+  ========================================================= */
   const psychoDesignCards = Array.from(document.querySelectorAll(".psycho-design-card"));
 
   let lockedDesignCard = null;
@@ -377,9 +412,12 @@
     });
   }
 
-  // ---------------------------------------------------------
-  // 10) Psycho Subject Navigation
-  // ---------------------------------------------------------
+
+
+  /* =========================================================
+     8) PSYCHO – SUBJECT NAVIGATION
+     obere menükarten schalten die content-sets um
+  ========================================================= */
   const psychoSubjectCards = Array.from(document.querySelectorAll(".psycho-subject-card"));
   const psychoContentSets = Array.from(document.querySelectorAll(".psycho-content-set"));
 
@@ -400,7 +438,7 @@
 
     if (trigger) {
       trigger.addEventListener("click", (e) => {
-        // verhindert, dass Klick auf View More als normaler Trigger-Klick zählt
+        // falls auf "view more" geklickt wurde, nicht doppelt triggern
         if (e.target.closest("[data-subject-more]")) return;
         setActivePsychoSubject(name);
       });
@@ -415,7 +453,7 @@
         const targetId = moreLink.getAttribute("href");
         if (!targetId) return;
 
-        // kleines Delay, damit der Inhalt erst sichtbar wird
+        // mini delay, damit das content-set erst sichtbar ist bevor gescrollt wird
         requestAnimationFrame(() => {
           scrollToHash(targetId);
         });
@@ -423,13 +461,15 @@
     }
   });
 
-  // Startzustand
+  // startzustand = erstes thema sichtbar
   setActivePsychoSubject("ad-psychology");
 
 
-  // // ---------------------------------------------------------
-  // // Perception Scroll Stack
-  // // ---------------------------------------------------------
+
+  /* =========================================================
+     9) PERCEPTION SCROLL STACK
+     aktuell stillgelegt, weil man auch nicht jeden gimmick retten muss
+  ========================================================= */
   // const scrollDeck = document.querySelector("[data-perception-scroll]");
   // const scrollCards = scrollDeck
   //   ? Array.from(scrollDeck.querySelectorAll("[data-stack-card]"))
@@ -462,10 +502,10 @@
 
 
 
-  // ---------------------------------------------------------
-  // 11) Color Culture Stage
-  // ---------------------------------------------------------
-  
+  /* =========================================================
+     10) COLOR CULTURE STAGE
+     die kultur-slides mit prev/next, weil statische boxen wohl zu einfach gewesen wären
+  ========================================================= */
   const cultureStage = document.querySelector(".psycho-color-culture");
   const culturePrev = document.querySelector("[data-culture-prev]");
   const cultureNext = document.querySelector("[data-culture-next]");
@@ -502,7 +542,6 @@
         note: "Symbolik oft wichtiger als Funktion"
       },
 
-      
       {
         key: "suedasien",
         title: "SÜDASIEN",
@@ -620,13 +659,13 @@
       cultureLeft.innerHTML = buildCultureLeft(slide.left);
       cultureRight.innerHTML = buildCultureRight(slide.rightRows, slide.note);
 
-      // Linker Button nur ab Index 1 sichtbar
+      // prev-button erst anzeigen wenn man nicht mehr ganz vorne ist
       culturePrev.classList.toggle("is-hidden", currentCultureIndex === 0);
     }
 
     cultureNext.addEventListener("click", () => {
       if (currentCultureIndex === cultureSlides.length - 1) {
-        currentCultureIndex = 0; // Variante B: letzter Schritt zurück zu Ostasien
+        currentCultureIndex = 0; // letzter step springt wieder auf den anfang
       } else {
         currentCultureIndex += 1;
       }
@@ -644,12 +683,13 @@
     updateCultureStage();
   }
 
-    // ---------------------------------------------------------
-  // 13) Checkout – kompletter Ablauf
-  // ---------------------------------------------------------
-  const checkoutRoot = document.querySelector(".checkout");
 
-  
+
+  /* =========================================================
+     11) CHECKOUT – KOMPLETTER ABLAUF
+     daten, zahlung, review, fake bestätigung, das ganze paket
+  ========================================================= */
+  const checkoutRoot = document.querySelector(".checkout");
 
   if (checkoutRoot)
   {
@@ -666,17 +706,20 @@
     const paymentRadios = Array.from(
       checkoutRoot.querySelectorAll('input[name="payment-method"]')
     );
-    // Kred
+
+    // kreditkartenfelder
     const creditFieldsWrap = checkoutRoot.querySelector("[data-credit-fields]");
     const creditInputs = creditFieldsWrap
       ? Array.from(creditFieldsWrap.querySelectorAll(".checkout-field__input"))
       : [];
-    // Rech
+
+    // rechnungsfelder
     const invoiceFieldsWrap = checkoutRoot.querySelector("[data-invoice-fields]");
     const invoiceInputs = invoiceFieldsWrap
       ? Array.from(invoiceFieldsWrap.querySelectorAll(".checkout-field__input"))
       : [];
 
+    // review-ausgabe in schritt 3
     const reviewName = checkoutRoot.querySelector("[data-review-name]");
     const reviewEmail = checkoutRoot.querySelector("[data-review-email]");
     const reviewAddress = checkoutRoot.querySelector("[data-review-address]");
@@ -703,6 +746,8 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    // markiert leere felder rot
+    // also die ganze nummer mit .is-error
     function validateFields(fields)
     {
       let isValid = true;
@@ -739,6 +784,7 @@
       return "";
     }
 
+    // validierung step 1
     function validateStepOne()
     {
       const valid = validateFields(stepOneFields);
@@ -751,6 +797,7 @@
       return valid;
     }
 
+    // validierung step 2
     function validateStepTwo()
     {
       const selectedPayment = getSelectedPaymentMethod();
@@ -794,6 +841,7 @@
       return true;
     }
 
+    // daten aus formular in review-boxen schreiben
     function fillReviewData()
     {
       const firstName = checkoutRoot.querySelector("#first-name")?.value.trim() || "";
@@ -811,6 +859,7 @@
       if (reviewPayment) reviewPayment.textContent = payment;
     }
 
+    // zeigt je nach zahlungsart die passenden felder an
     function updatePaymentFieldsVisibility()
     {
       const selectedPayment = getSelectedPaymentMethod();
@@ -826,11 +875,18 @@
       }
     }
 
-    // Weiter-Buttons
+    // weiter-buttons durch die steps
     nextButtons.forEach((button) =>
     {
       button.addEventListener("click", () =>
       {
+        // =====================================================
+        // WICHTIG:
+        // wenn die roten fehlerfelder + alerts wieder aktiv sein sollen,
+        // diese beiden blöcke hier UNTEN wieder entkommentieren
+        // und die direkten showStep()-blöcke darunter NICHT benutzen
+        // =====================================================
+
         // if (currentStep === 1)
         // {
         //   if (!validateStepOne()) return;
@@ -846,6 +902,7 @@
         //   return;
         // }
 
+        // aktuelle vereinfachte version ohne step-1 / step-2 pflichtvalidierung
         if (currentStep === 1)
         {
           showStep(2);
@@ -859,18 +916,25 @@
           return;
         }
 
+        // step 3 = bestellen
+        // paypal geht erst auf paypal-demo
+        // andere zahlungsarten kriegen den loader und dann step 4
         if (currentStep === 3)
         {
           const selectedPayment = getSelectedPaymentMethod();
 
-          // PayPal → echte Weiterleitung
+          if (!selectedPayment)
+          {
+            alert("Bitte wähle eine Zahlungsart aus.");
+            return;
+          }
+
           if (selectedPayment === "paypal")
           {
             window.location.href = "paypal.html";
             return;
           }
 
-          // Loader anzeigen
           const loader = document.querySelector("[data-loader]");
 
           if (loader)
@@ -878,7 +942,6 @@
             loader.classList.add("is-active");
           }
 
-          // Fake Processing Delay
           setTimeout(() =>
           {
             if (loader)
@@ -888,14 +951,14 @@
 
             showStep(4);
 
-          }, 1800); // Dauer 
+          }, 1800);
 
           return;
         }
       });
     });
 
-    // Zurück-Buttons
+    // zurück-buttons
     backButtons.forEach((button) =>
     {
       button.addEventListener("click", () =>
@@ -919,7 +982,7 @@
       });
     });
 
-    // Fehler beim Tippen entfernen
+    // wenn man wieder tippt, rote fehlerklasse entfernen
     [...stepOneFields, ...creditInputs, ...invoiceInputs].forEach((field) =>
     {
       field.addEventListener("input", () =>
@@ -939,7 +1002,7 @@
       });
     });
 
-    // Zahlungsart
+    // bei wechsel der zahlungsart passende felder zeigen/verstecken
     paymentRadios.forEach((radio) =>
     {
       radio.addEventListener("change", () =>
@@ -951,6 +1014,7 @@
     updatePaymentFieldsVisibility();
     showStep(1);
 
+    // rücksprung aus paypal-demo
     const urlParams = new URLSearchParams(window.location.search);
 
     if (urlParams.get("paypal") === "cancel")
@@ -966,9 +1030,12 @@
     }
   }
 
-  // ---------------------------------------------------------
-  // Shop – Sample Modal
-  // ---------------------------------------------------------
+
+
+  /* =========================================================
+     12) SHOP – SAMPLE MODAL
+     kleines popup für leseprobe
+  ========================================================= */
   const sampleModal = document.querySelector("[data-sample-modal]");
   const sampleOpenButton = document.querySelector("[data-sample-open]");
   const sampleCloseButtons = document.querySelectorAll("[data-sample-close]");
@@ -994,6 +1061,7 @@
       button.addEventListener("click", closeSampleModal);
     });
 
+    // escape schließt modal, so wie sich das gehört
     document.addEventListener("keydown", (event) =>
     {
       if (event.key === "Escape" && !sampleModal.hidden)
@@ -1005,42 +1073,54 @@
 
 
 
+  /* =========================================================
+     13) ALT / STILLGELEGT / TESTKRAM
+     bleibt kommentiert drin, weil man es später evtl. nochmal braucht
+  ========================================================= */
+  // // Disable checkout validation globally
+  // window.validateStepOne = () => true;
+  // window.validateStepTwo = () => true;
 
-            // // Disable checkout validation globally
-            // window.validateStepOne = () => true;
-            // window.validateStepTwo = () => true;
+  // const disableValidation = true;
 
-            //   const disableValidation = true;
+  // if (disableValidation) {
+  //   document.querySelectorAll("form").forEach(form => {
+  //     form.setAttribute("novalidate", "novalidate");
+  //   });
+  // }
 
-            // if (disableValidation) {
-            //   document.querySelectorAll("form").forEach(form => {
-            //     form.setAttribute("novalidate", "novalidate");
-            //   });
-            // }
 
-    
-  // ---------------------------------------------------------
-  // PayPal Demo
-  // ---------------------------------------------------------
+
+  /* =========================================================
+     14) PAYPAL DEMO
+     fake-bezahlen button + loader + rücksprung in checkout
+  ========================================================= */
   const paypalDemoSubmit = document.querySelector("[data-paypal-demo-submit]");
 
   if (paypalDemoSubmit)
   {
     paypalDemoSubmit.addEventListener("click", () =>
     {
-      window.location.href = "checkout.html?paypal=success";
+      const loader = document.querySelector("[data-loader]");
+
+      if (loader)
+      {
+        loader.classList.add("is-active");
+      }
+
+      setTimeout(() =>
+      {
+        window.location.href = "checkout.html?paypal=success";
+      }, 1800);
     });
   }
 
 
 
-
-
-
-
-  // ---------------------------------------------------------
-  // Cookie Banner
-  // ---------------------------------------------------------
+  /* =========================================================
+     15) COOKIE BANNER
+     nerviges popup, aber gehört halt dazu
+  ========================================================= */
   const cookieBanner = document.querySelector("[data-cookie-banner]");
   const cookieAcceptButton = document.querySelector("[data-cookie-accept]");
   const cookieDeclineButton = document.querySelector("[data-cookie-decline]");
@@ -1078,30 +1158,32 @@
   }
 
 
-  // Behinterten Button
-  const a11yToggle = document.querySelector('.a11y-toggle');
+
+  /* =========================================================
+     16) BEHINDI   TOGGLE
+     speichert status in localStorage, damit das ding nicht bei jedem reload resetet
+  ========================================================= */
+  const a11yToggle = document.querySelector(".a11y-toggle");
 
   if (a11yToggle) {
-    a11yToggle.addEventListener('click', () => {
-      a11yToggle.classList.toggle('active');
+    a11yToggle.addEventListener("click", () => {
+      a11yToggle.classList.toggle("active");
 
-      const isActive = a11yToggle.classList.contains('active');
+      const isActive = a11yToggle.classList.contains("active");
 
-      // Zustand speichern
-      localStorage.setItem('pulsar-a11y', isActive);
+      // status merken
+      localStorage.setItem("pulsar-a11y", isActive);
 
-      // Klasse auf body
-      document.body.classList.toggle('a11y-mode', isActive);
+      // klasse auf body setzen / entfernen
+      document.body.classList.toggle("a11y-mode", isActive);
     });
 
-    // Zustand laden
-    const saved = localStorage.getItem('pulsar-a11y') === 'true';
+    // gespeicherten status beim laden wieder anwenden
+    const saved = localStorage.getItem("pulsar-a11y") === "true";
     if (saved) {
-      a11yToggle.classList.add('active');
-      document.body.classList.add('a11y-mode');
+      a11yToggle.classList.add("active");
+      document.body.classList.add("a11y-mode");
     }
   }
 
 })();
-
-

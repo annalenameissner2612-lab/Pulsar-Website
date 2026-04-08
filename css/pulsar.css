@@ -146,7 +146,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--muted);
 }
 
-.hero-copy .lead /* Text unter Headline in Home */
+.hero-copy .lead /* Text unter Headline in */
 {
   line-height: 1.35;
   margin-top: 20px;
@@ -171,7 +171,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--text);
 }
 
-.psycho-card ul li::marker
+.psycho-card ul li::marker /*Listen Dots immer blau*/
 {
   color: var(--dots);
 }
@@ -215,7 +215,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 
 
 /* =========================================================
-   Global Section
+   Nachbesserung für index
 ========================================================= */
 
 /* Sections */
@@ -285,10 +285,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   display: block;
 }
 
-.cookie-banner__content
-{
-  min-width: 0;
-}
+.cookie-banner__content {min-width: 0;}
 
 .cookie-banner__title
 {
@@ -315,12 +312,11 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   align-items: center;
 }
 
-.cookie-banner__button
-{
-  white-space: nowrap;
-}
+.cookie-banner__button {white-space: nowrap;}
 
-@media (max-width: 860px)
+
+/*bissel responsive*/
+@media (max-width: 860px) 
 {
   .cookie-banner__inner
   {
@@ -352,22 +348,26 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   letter-spacing: 0.10em;
 }
 
-.cookie-banner .btn-primary
-{
-  box-shadow: 0 6px 16px rgba(31, 60, 133, 0.14);
-}
+
+
+/*bisschen button nachbessern, gelber schatten geht über banner drüber hinaus*/
+.cookie-banner .btn-primary {box-shadow: 0 6px 16px rgba(31, 60, 133, 0.14);}
 
 
 /* =========================================================
-   ACCESSIBILITY TOGGLE
+   Behindrten Button
 ========================================================= */
+/* noch nicht ganz geil weil muss main nav um stylen, liegt auf der gleichen
+ebene wie main nav das align passt also noch nicht ganz, war bis her zu faul*/
 
 .a11y-control
 {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 240px;
+
+  margin-left: 0;
+  margin-right: 0;
   white-space: nowrap;
   flex-shrink: 0;
 }
@@ -412,10 +412,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   border-color: rgba(236, 180, 42, 0.35);
 }
 
-.a11y-toggle.active .a11y-toggle__thumb
-{
-  transform: translateX(22px);
-}
+.a11y-toggle.active .a11y-toggle__thumb {transform: translateX(22px);}
 
 .a11y-label
 {
@@ -448,12 +445,11 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0;
+  justify-content: space-between;
 
   padding: 28px 60px 0 120px;
-  flex-wrap: wrap;
 }
+
 
 .logo
 {
@@ -471,11 +467,16 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 /* Nav */
 .main-nav
 {
-  margin-left: 90px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-left: 0;
 }
+
 
 .nav-list
 {
@@ -503,6 +504,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   transition: transform 0.25s ease, color 0.25s ease;
 }
 
+/* passt noch nicht ganz, kann sein dass noch was vom ursprügnlichen nav system übrig ist, hatte ein dropdown im main nav*/
 .nav-link:hover
 {
   color: var(--accent);
@@ -543,7 +545,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 /* Aktive Seite = gelb */
 .nav-link.is-active {color: var(--accent);}
 
-/* Mobile toggle (wird in Mobile aktiviert) */
+/* smartphone menue toggle noch nicht ganz optimiert */
 .nav-toggle
 {
   display: none;
@@ -558,9 +560,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 .nav-toggle__bar
 {
   display: block;
+  width: 20px;
   height: 2px;
-  width: 22px;
-  margin: 5px auto;
+  margin: 0;
   background: var(--ink);
   border-radius: 10px;
 }
@@ -611,7 +613,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   isolation: isolate;
 }
 
-/* Das Bild soll die ganze Breite der Bühne einnehmen */
+/* komplette bildschirm breite */
 .hero-figure
 {
   position: absolute;
@@ -646,7 +648,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   );
 }
 
-/* Weiche Aufhellung über dem Bild */
+/* Weiche Aufhellung über dem Bild, wahrscheinlich zu krass man sieht nix merhr vom bild nach dem launch */
 .hero-stage::before
 {
   content: "";
@@ -688,7 +690,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding-top: 60px;
 }
 
-/* Logo */
+
 .hero-logo
 {
   width: min(980px, 86vw);
@@ -698,12 +700,10 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   margin-bottom: 30px;
 }
 
-/* CTA */
-.hero-actions
-{
-  margin-top: 0;
-}
 
+.hero-actions {margin-top: 0;}
+
+/* warum überhsaupt die global settings XD */
 .hero-actions .btn
 {
   height: 42px;
@@ -711,7 +711,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   font-size: 13px;
 }
 
-/* Symbols */
+/* Signature formen */
 .hero-symbols
 {
   width: 170px;
@@ -721,7 +721,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   opacity: 0.95;
 }
 
-/* Alte Hero-Elemente sicher deaktivieren */
+/* nach der umstellung auf die neue hero page, hatte kein bock mehr zu suchen */
 .hero-grid,
 .hero-copy,
 .hero-cards,
@@ -743,7 +743,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   gap: 22px;
 }
 
-.card /* Inhalt der Karte */
+.card /* card content */
 {
   background: var(--card);
   border-radius: var(--radius-lg);
@@ -754,7 +754,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   min-height: 350px;
 }
 
-/* Overline in gelb wie Wireframe */
+/* Overline  */
 .card-kicker
 {
   margin: 0 0 15px; /* Overline -> Headline */
@@ -786,7 +786,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 /* -----------------------------
-   QUOTE SVG Section (wie Wireframe)
+   QUOTE SVG Section 
 ------------------------------ */
 .section-quote {padding: 36px 0 54px;}
 
@@ -812,7 +812,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr; /* links schmaler, rechts breiter */
-  gap: 55px;                            /* etwas mehr Luft wie im Wireframe */
+  gap: 55px;                            /* etwas mehr Luft */
   align-items: stretch;                 /* wichtig für Punkt 3 */
 }
 
@@ -824,21 +824,21 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   overflow: hidden;
 
   background:
-    url("../assets/img/Branding2.png") center center / cover no-repeat;
+    url("../assets/img/Branding2.png") center center / cover no-repeat; /*warum lamnge Ladezeit??????*/
 
   border: 1px solid rgba(31, 60, 133, 0.08);
   box-shadow: var(--shadow-soft);
   margin-bottom: 20px;
 }
 
-/* Linke Spalte: Bild + Text darunter */
+/* Linke Spalte: Bild & Text darunter */
 .idea-left
 {
   display: grid;
   gap: 18px;
 }
 
-/* Caption unter der grauen Box */
+/* Caption unter grauer Box */
 .idea-caption__title
 {
   margin: 0 0 7px;
@@ -864,7 +864,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 .step
 {
   display: grid;
-  grid-template-columns: 112px 1fr; /* linke Zahlbox deutlich größer */
+  grid-template-columns: 112px 1fr; 
   gap: 22px;
   align-items: center;
 
@@ -883,11 +883,13 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.step:hover .step-num {transform: translateY(-4px);}
+.step:hover .step-num {transform: translateY(-4px);} /*warum nicht bisschen hovern*/
 
 /* -----------------------------
    Reveal Animation (für JS)
 ------------------------------ */
+
+/* eig global settings aber bleibt jetzt einfachg hier */
 .reveal
 {
   opacity: 0;
@@ -902,7 +904,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 /* -----------------------------
-   Responsive
+   bisschen responsive
 ------------------------------ */
 
 @media (max-width: 1100px)
@@ -950,22 +952,59 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 {
   .site-header
   {
-    padding-left: 22px;
-    padding-right: 22px;
+    padding: 18px 22px 0 22px;
+    position: relative;
+    min-height: 64px;
   }
 
-  .logo {
-    width: 140px;
+  .logo-link
+  {
+    display: none;
   }
 
-  /* Mobile Nav */
-  .nav-toggle {
-    display: inline-block;
+  .main-nav
+  {
+    position: static;
+    transform: none;
+    margin-left: 0;
   }
 
-  .nav-list {
+  .nav-toggle
+  {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
     position: fixed;
-    inset: calc(var(--header-h)) 16px auto 16px;
+    top: 18px;
+    left: 22px;
+    z-index: 2200;
+  }
+
+  .a11y-control
+  {
+    position: fixed;
+    top: 18px;
+    right: 22px;
+    z-index: 2200;
+
+    margin-left: 0;
+    gap: 0;
+  }
+
+  .a11y-label
+  {
+    display: none;
+  }
+
+  .nav-list
+  {
+    position: fixed;
+    top: 72px;
+    left: 16px;
+    right: 16px;
 
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(10px);
@@ -981,16 +1020,18 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.25s ease, transform 0.25s ease;
+    z-index: 2100;
   }
 
-  .main-nav[data-open="true"] .nav-list {
+  .main-nav[data-open="true"] .nav-list
+  {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
 
-  /* Dropdown in mobile als "aufklappbar" */
-  .dropdown {
+  .dropdown
+  {
     position: static;
     transform: none;
     width: 100%;
@@ -1005,33 +1046,21 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
     transition: max-height 0.25s ease, opacity 0.25s ease, padding 0.25s ease;
   }
 
-  .has-dropdown[data-open="true"] .dropdown {
+  .has-dropdown[data-open="true"] .dropdown
+  {
     opacity: 1;
     max-height: 240px;
     padding: 10px;
   }
 
-  .quote-svg {
+  .quote-svg
+  {
     max-width: 92%;
   }
-
-  /* Hero-Karten auf Mobile zentrieren */
-  .hero-card--a,
-  .hero-card--b,
-  .hero-card--c {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .hero-card--a { top: 0; }
-  .hero-card--b { top: 26px; }
-  .hero-card--c { top: 178px; }
 }
 
-
 /* =========================================================
-   RESULTS – HERO (old index style)
+   RESULTS – HERO (alter index style)
 ========================================================= */
 
 .hero-results.section
@@ -1056,10 +1085,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   max-width: 520px;
 }
 
-.hero-results__actions
-{
-  margin-top: 34px;
-}
+.hero-results__actions {margin-top: 34px;}
 
 .hero-results__cards
 {
@@ -1081,6 +1107,8 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   box-shadow: var(--shadow-soft);
   overflow: hidden;
 }
+
+/* bisschen größer machen zu viel weißraum */
 
 /* Links Mitte */
 .hero-results__card--b
@@ -1118,7 +1146,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 
 
 /* -----------------------------
-   RESULTS – OVERVIEW CARDS
+   menue cards
 ------------------------------ */
 
 .results-overview
@@ -1127,15 +1155,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding-bottom: 40px;
 }
 
-.results-overview__head
-{
-  margin-bottom: 90px;
-}
+.results-overview__head {margin-bottom: 90px;}
 
-.results-overview__head .h2
-{
-  margin-bottom: 14px;
-}
+.results-overview__head .h2{margin-bottom: 14px;}
 
 
 .results-cards
@@ -1204,7 +1226,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 .results-card.is-active .results-card__label
 {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  transform: translateX(-50%) translateY(0); /*hätte zeit gespart wenn ich gleich global gemacht hätte */
 }
 
 
@@ -1277,7 +1299,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 /* =========================================================
-   RESULTS – CONTENT STAGE
+   getriggerte inhalte der einzelnen menue cards
 ========================================================= */
 
 .results-stage
@@ -1428,7 +1450,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   height: auto;
   flex-shrink: 0;
   position: relative;
-  top: -35px;     /* (-)) nach oben */
+  top: -35px;     /* (-)) nach oben */ /*1000x vergessen XD*/
   right: -6px;   /* (-)) nach rechts */
 }
 
@@ -1506,7 +1528,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   pointer-events: none;
 }
 
-.result-icon-card:hover .result-icon-card__label
+.result-icon-card:hover .result-icon-card__label /* ich hätte es wirklich einfach global regeln sollen ist das nervig*/
 {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
@@ -1530,8 +1552,6 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   transition: transform .25s ease;
 }
 
-
-
 .results-card.is-active
 {
   transform: translateY(-18px) scale(1.08);
@@ -1543,7 +1563,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 
 
 
-/* SVG optisches Maß*/
+/* SVG optisches anpassen*/
 .icon-brain {transform: scale(1.25);}
 
 .result-article[data-article="book"] .result-card__hero-icon
@@ -1562,9 +1582,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
-/* =========================================================
-   POSTER ARTICLE
-========================================================= */
+/* -
+   poster Content
+- */
 
 /* Grid Syytem, grösse der Kacheln innerhalb des Grids*/
 .poster-stage
@@ -1584,7 +1604,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   margin-top: 5px;
 }
 
-/* Poster Fächer*/
+/* Poster Fächer, so ne kotzigen scheiße gewesen*/
 .poster-fan__item
 {
   position: absolute;
@@ -1603,9 +1623,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   align-items: center;
   justify-content: center;
   transition:
-  transform 0.95s cubic-bezier(0.16, 1, 0.22, 1.08),
-  opacity 0.42s ease,
-  box-shadow 0.42s ease;
+    transform 0.95s cubic-bezier(0.16, 1, 0.22, 1.08), /*vorallem das, ewig saß ich an dem müll*/
+    opacity 0.42s ease,
+    box-shadow 0.42s ease;
   will-change: transform;
   transform-origin: center center;
 }
@@ -1652,19 +1672,13 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 .poster-fan__item[data-poster="poster1"] .poster-fan__image
-{
-  background-image: url("../assets/img/poster1.png");
-}
+{background-image: url("../assets/img/poster1.png");}
 
 .poster-fan__item[data-poster="poster2"] .poster-fan__image
-{
-  background-image: url("../assets/img/poster2.png");
-}
+{background-image: url("../assets/img/poster2.png");}
 
 .poster-fan__item[data-poster="poster3"] .poster-fan__image
-{
-  background-image: url("../assets/img/poster3.png");
-}
+{background-image: url("../assets/img/poster3.png");}
 
 .poster-fan__image::before,
 .poster-fan__image::after
@@ -1771,10 +1785,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   gap: 26px;
 }
 
-.poster-download-btn
-{
-  min-width: 198px;
-}
+.poster-download-btn {min-width: 198px;}
 
 .poster-download-icon
 {
@@ -1852,9 +1863,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--muted);
 }
 
-/* =========================================================
-   POSTER FAN – aktive / passive Zustände
-========================================================= */
+/* -
+   poster-fan – aktive / passive Zustände
+- */
 
 .poster-fan__item {opacity: 0.72;}
 
@@ -1920,9 +1931,483 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 .results-panel:has(.result-article[data-article="poster"].is-visible) .results-panel__media
+{display: none;} /*extra weil ich es ab und zu mal aus kommentieren musste um zu schauen ob das das problem war gab ein bisschen probleme hier*/
+
+
+
+/* =========================================================
+   RESULTS RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px)
 {
-  display: none;
+  .hero-results.section
+  {
+    padding-top: 110px;
+    padding-bottom: 70px;
+  }
+
+  .hero-results__grid
+  {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .hero-results__copy
+  {
+    max-width: 100%;
+  }
+
+  .hero-results__cards
+  {
+    justify-self: center;
+    width: 460px;
+    height: 430px;
+  }
+
+  .hero-results__card--a
+  {
+    width: 210px;
+    height: 330px;
+    top: 0;
+  }
+
+  .hero-results__card--b
+  {
+    width: 220px;
+    height: 330px;
+    left: 10px;
+    top: 40px;
+  }
+
+  .hero-results__card--c
+  {
+    width: 210px;
+    height: 170px;
+    right: 0;
+    bottom: 10px;
+  }
+
+  .results-cards
+  {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .results-card
+  {
+    flex: 0 1 calc(50% - 12px);
+    max-width: 260px;
+  }
+
+  .results-panel
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .results-panel__media
+  {
+    min-height: 420px;
+  }
+
+  .results-panel__content
+  {
+    min-height: auto;
+  }
+
+  .result-article
+  {
+    position: relative;
+    inset: auto;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+    display: none;
+  }
+
+  .result-article.is-visible
+  {
+    display: block;
+  }
+
+  .poster-stage
+  {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .poster-fan
+  {
+    min-height: 420px;
+    margin-left: 0;
+  }
+
+  .poster-info
+  {
+    min-height: 320px;
+  }
+
+  .poster-points
+  {
+    min-height: 220px;
+  }
+
+  .poster-points__grid
+  {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .poster-point
+  {
+    padding: 0;
+  }
+
+  .poster-point:not(:first-child)
+  {
+    border-left: 0;
+    border-top: 1px solid rgba(31, 60, 133, 0.25);
+    padding-top: 20px;
+  }
 }
+
+@media (max-width: 680px)
+{
+  .hero-results.section
+  {
+    padding-top: 90px;
+    padding-bottom: 54px;
+  }
+
+  .hero-results__copy .h1
+  {
+    font-size: clamp(28px, 9vw, 42px);
+    line-height: 1.08;
+  }
+
+  .hero-results__copy .lead
+  {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .hero-results__actions
+  {
+    margin-top: 24px;
+  }
+
+  .hero-results__cards
+  {
+    width: 100%;
+    max-width: 320px;
+    height: 280px;
+  }
+
+  .hero-results__card--a
+  {
+    width: 150px;
+    height: 220px;
+    top: 0;
+    right: 0;
+  }
+
+  .hero-results__card--b
+  {
+    width: 150px;
+    height: 220px;
+    left: 0;
+    top: 32px;
+  }
+
+  .hero-results__card--c
+  {
+    width: 150px;
+    height: 110px;
+    right: 0;
+    bottom: 0;
+  }
+
+  .results-overview
+  {
+    padding-top: 40px;
+    padding-bottom: 24px;
+  }
+
+  .results-overview__head
+  {
+    margin-bottom: 36px;
+  }
+
+  .results-cards
+  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .results-card
+  {
+    max-width: none;
+    width: 100%;
+    height: 190px;
+    min-width: 0;
+    padding: 18px 12px 16px;
+  }
+
+  .results-card__image
+  {
+    width: 90px;
+    height: 90px;
+    margin-top: 10px;
+  }
+
+  .results-card__image img
+  {
+    width: 78px;
+  }
+
+  .results-card__label
+  {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    bottom: 16px;
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  .results-cards:hover .results-card
+  {
+    transform: none;
+    opacity: 1;
+    filter: none;
+  }
+
+  .results-cards .results-card:hover
+  {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+
+  .results-stage
+  {
+    padding-top: 30px;
+    padding-bottom: 56px;
+  }
+
+  .results-panel__media
+  {
+    min-height: 260px;
+    border-radius: 22px;
+  }
+
+  .result-card
+  {
+    padding: 24px 20px 26px;
+    min-height: auto;
+    border-radius: 22px;
+  }
+
+  .result-card__topline
+  {
+    margin: 0 0 14px;
+  }
+
+  .result-card__head
+  {
+    margin-bottom: 18px;
+    gap: 12px;
+  }
+
+  .result-card__title
+  {
+    margin: 0;
+    font-size: 28px;
+  }
+
+  .result-card__hero-icon
+  {
+    width: 62px;
+    top: 0;
+    right: 0;
+    position: static;
+  }
+
+  .result-article[data-article="book"] .result-card__hero-icon
+  {
+    position: static;
+    width: 72px;
+  }
+
+  .result-card__text
+  {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .result-card__text p
+  {
+    font-size: 14px;
+    text-align: left;
+  }
+
+  .result-icons
+  {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .result-icon-card
+  {
+    aspect-ratio: auto;
+    min-height: 120px;
+    border-radius: 18px;
+  }
+
+  .result-icon-card__label
+  {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+    bottom: 14px;
+    font-size: 10px;
+  }
+
+  .result-icon-card img
+  {
+    max-width: 72px;
+    max-height: 72px;
+    transform: translateY(-4px);
+  }
+
+  .poster-fan
+  {
+    min-height: 280px;
+  }
+
+  .poster-fan__item
+  {
+    width: 140px;
+    height: 210px;
+    border-radius: 18px;
+  }
+
+  .poster-fan__item--left
+  {
+    left: 0;
+    top: 26px;
+  }
+
+  .poster-fan__item--center
+  {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  .poster-fan__item--right
+  {
+    right: 0;
+    left: auto;
+    top: 26px;
+  }
+
+  .poster-fan__item.is-left
+  {
+    transform: translateX(0) rotate(-8deg) scale(0.92);
+  }
+
+  .poster-fan__item.is-center
+  {
+    transform: translateX(-50%) rotate(0deg) scale(1);
+  }
+
+  .poster-fan__item.is-right
+  {
+    transform: translateX(0) rotate(8deg) scale(0.92);
+  }
+
+  .poster-info
+  {
+    min-height: auto;
+  }
+
+  .poster-info__panel
+  {
+    position: relative;
+    inset: auto;
+    display: none;
+    padding: 28px 22px 24px;
+    border-radius: 24px;
+  }
+
+  .poster-info__panel.is-visible
+  {
+    display: block;
+  }
+
+  .poster-info__title
+  {
+    font-size: 34px;
+    margin-bottom: 22px;
+  }
+
+  .poster-info__text
+  {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .poster-info__actions
+  {
+    position: static;
+    margin-top: 22px;
+    gap: 18px;
+  }
+
+  .poster-download-btn
+  {
+    min-width: 0;
+  }
+
+  .poster-points
+  {
+    position: relative;
+    min-height: auto;
+    margin-top: 24px;
+  }
+
+  .poster-points__panel
+  {
+    position: relative;
+    inset: auto;
+    display: none;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .poster-points__panel.is-visible
+  {
+    display: block;
+  }
+
+  .poster-point__title
+  {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .poster-point__text
+  {
+    font-size: 14px;
+  }
+}
+
+
+
+
 
 
 /* =========================================================
@@ -2047,9 +2532,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   font-size: 11px;
 }
 
-/* =========================================================
-   PSYCHO SUBJECTS NAV
-========================================================= */
+/* -
+    menue cards
+- */
 
 .psycho-subjects.section
 {
@@ -2180,7 +2665,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 /* =========================================================
-   PSYCHO CONTENT SWITCHING
+   inhalte neu rein laden
 ========================================================= */
 
 .psycho-content-set {display: none;}
@@ -2189,7 +2674,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 
 /* Platzhalter für kommende Bereiche */
 
-.psycho-placeholder.section
+/* .psycho-placeholder.section
 {
   padding-top: 95px;
   padding-bottom: 120px;
@@ -2217,11 +2702,13 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   height: auto;
   display: block;
   opacity: 0.9;
-}
+} */
 
 /* =========================================================
-   PSYCHO DEFINITION SECTION
+   Layer 1 Ad Psych 
 ========================================================= */
+
+/* Definition */
 
 .psycho-definition {padding-top: 95px;}
 
@@ -2335,9 +2822,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
-/* =========================================================
-   DESIGN x WERBEPSYCHOLOGIE
-========================================================= */
+/* -
+   Design x Werbepsyxhc
+- */
 
 .psycho-design.section
 {
@@ -2533,9 +3020,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   background: var(--dots);
 }
 
-/* --------------------------------
-   Psycho Design – Interaction
--------------------------------- */
+/* -
+   D x W  Interaction
+- */
 
 .psycho-design-card
 {
@@ -2627,9 +3114,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 .psycho-design-card.is-active
 {box-shadow: none;}
 
-/* =========================================================
-   VERANTWORTUNG & VERTRAUEN
-========================================================= */
+/* -
+  V und V
+- */
 
 .psycho-trust.section
 {
@@ -2649,7 +3136,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   gap: 26px;
 }
 
-/* Bildkarten */
+/* Bild carts */
 .psycho-trust__media
 {
   height: 100%;
@@ -2662,7 +3149,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   box-shadow: var(--shadow-soft);
 }
 
-/* Platzhalter für spätere Bilder */
+/* Platzhalter */
 .psycho-trust__media--one {background-image: url(../assets/img/brand.png);}
 
 .psycho-trust__media--two {background-image: url(../assets/img/designer.png);}
@@ -2678,7 +3165,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   box-shadow: var(--shadow);
 }
 
-/* Kicker */
+
 .psycho-trust__kicker
 {
   margin: 0 0 22px;
@@ -2691,7 +3178,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--accent);
 }
 
-/* Titel */
+
 .psycho-trust__title
 {
   margin: 0 0 28px;
@@ -2704,7 +3191,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--ink);
 }
 
-/* Liste */
+
 .psycho-trust__list
 {
   list-style: none;
@@ -2725,7 +3212,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 /* =========================================================
-   PERCEPTION 1. Abschnitt
+   Perception
 ========================================================= */
 
 
@@ -2735,13 +3222,10 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding-bottom: 0px;
 }
 
-/* Headline */
-.psycho-perception-intro__head
-{
-  margin-bottom: 62px;
-}
 
-/* Grid */
+.psycho-perception-intro__head {margin-bottom: 62px;}
+
+
 .psycho-perception-intro__grid
 {
   display: grid;
@@ -2749,7 +3233,6 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   gap: 28px;
 }
 
-/* Card */
 .psycho-perception-intro__card
 {
   min-height: 230px;
@@ -2767,7 +3250,6 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   text-align: center;
 }
 
-/* Icon */
 .psycho-perception-intro__icon
 {
   width: 65px;
@@ -2776,7 +3258,6 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   margin-bottom: 40px;
 }
 
-/* Text */
 .psycho-perception-intro__text
 {
   margin: 0;
@@ -2789,9 +3270,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 
 
 
-/* =========================================================
-   PERCEPTION – STACK CARDS
-========================================================= */
+/* -
+   mechanismen cards
+- */
 
 .psycho-perception-stack.section
 {
@@ -2843,14 +3324,14 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 /* goal.svg */
 .psycho-perception-stack__meta-icon
 {
-  width: 50px;
+  width: 30px;
   height: auto;
   display: block;
   margin: 0;
   padding: 0;
 }
 
-/* Wichtige Mechanismen */
+/* topline */
 .psycho-perception-stack__kicker
 {
   margin: 0;
@@ -2862,7 +3343,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--accent);
 }
 
-/* Gruppe 2: Headline */
+/* Gruppe 2 Headline */
 .psycho-perception-stack__title
 {
   margin: 0;
@@ -2877,7 +3358,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   margin-bottom: 40px;
 }
 
-/* Gruppe 3: Textblock */
+/* Gruppe  Textblock */
 .psycho-perception-stack__text
 {
   margin: 0;
@@ -2906,7 +3387,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   background-color: rgba(160, 175, 190, 0.35);
 }
 
-/* Bilder */
+
 .psycho-perception-stack__media--spicy  { background-image: url("../assets/img/spicy.png"); }
 .psycho-perception-stack__media--break  { background-image: url("../assets/img/break.png"); }
 .psycho-perception-stack__media--fresh  { background-image: url("../assets/img/fresh.png"); }
@@ -2916,7 +3397,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 
 
 
-/* PERCEPTION – CONTEXT SECTION */
+/* -
+context section / letzte section
+-*/
 
 .psycho-perception-context.section {padding-bottom: 40px;}
 
@@ -2938,7 +3421,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding: 30px 34px;
 }
 
-/* LINKS OBEN – TEXT */
+/* links oben - text */
 
 .psycho-perception-context__card--text
 {
@@ -2956,7 +3439,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   font-weight: 300;
 }
 
-/* MITTE – ORANGE BACKGROUND + SLICE */
+/* mitte oben bild + svg */
 
 .psycho-perception-context__card--visual
 {
@@ -2973,7 +3456,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   justify-content: center;
 }
 
-/* Slice SVG */
+/* slice svg */
 .psycho-perception-context__slice
 {
   width: 124px;
@@ -3008,14 +3491,15 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 /* Pfeil */
+/* eig nochmal das svg im ai nachbessern bc ist zu dünn */
 .psycho-perception-context__arrow
 {
-  width: 26px;
+  width: 20px;
   height: auto;
   margin-top: 6px;
 }
 
-/* Text */
+
 .psycho-perception-context__card--highlight p
 {
   margin: 0;
@@ -3025,12 +3509,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   max-width: 640px;
 }
 
-.psycho-summary.section
-{
-  padding: 100px 0 120px;
-}
+.psycho-summary.section {padding: 100px 0 120px;}
 
-/* Grid */
+/* ----------Grid---------- */
 .psycho-summary__grid
 {
   display: grid;
@@ -3038,13 +3519,8 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   align-items: center;
 }
 
-/* Items */
-.psycho-summary__item
-{
-  text-align: center;
-}
+.psycho-summary__item {text-align: center;}
 
-/* Headline */
 .psycho-summary__item h3
 {
   margin: 0 0 18px;
@@ -3057,7 +3533,6 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--ink);
 }
 
-/* Text */
 .psycho-summary__item p
 {
   margin: 0;
@@ -3070,7 +3545,6 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--text);
 }
 
-/* Divider */
 .psycho-summary__divider
 {
   width: 1px;
@@ -3081,8 +3555,11 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 
 
 /* =========================================================
-   COLOR – INTRO
+   COLOR 
 ========================================================= */
+/* -
+  intro
+-*/
 
 .psycho-color-intro.section
 {
@@ -3092,10 +3569,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 
 .psycho-color-intro .psycho-card__kicker {font-size: 14px;}
 
-.psycho-color-intro__head
-{
-  margin-bottom: 42px;
-}
+.psycho-color-intro__head {margin-bottom: 42px;}
 
 .psycho-color-intro__head .h2
 {
@@ -3139,10 +3613,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   margin-bottom: 22px;
 }
 
-.psycho-color-intro__item
-{
-  display: block;
-}
+.psycho-color-intro__item {display: block;}
 
 .psycho-color-note
 {
@@ -3178,7 +3649,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
-/* 2 */
+/*-
+  effekte
+-*/
 
 .psycho-color-effects.section
 {
@@ -3277,9 +3750,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 
 
 
-/* =========================================================
-   COLOR – SUBCONSCIOUS PERCEPTION
-========================================================= */
+/* -
+  unterbewusste wahrnehm
+- */
 
 .psycho-color-subconscious.section
 {
@@ -3287,10 +3760,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding-bottom: 90px;
 }
 
-.psycho-color-subconscious__head
-{
-  margin-bottom: 30px;
-}
+.psycho-color-subconscious__head {margin-bottom: 30px;}
 
 .psycho-color-subconscious__head .h2
 {
@@ -3344,7 +3814,6 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
-
 .psycho-color-subconscious__card--top
 {
   grid-column: 1 / -1;
@@ -3357,10 +3826,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding: 34px 100px 34px 44px;
 }
 
-.psycho-color-subconscious__top-content
-{
-  display: block;
-}
+.psycho-color-subconscious__top-content {display: block;}
 
 .psycho-color-subconscious__signals
 {
@@ -3420,8 +3886,6 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   display: block;
 }
 
-
-
 .psycho-color-subconscious__card--info
 {
   grid-column: 2 / 4;
@@ -3462,10 +3926,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   margin-left: 20px;
 }
 
-.psycho-color-subconscious__info-list-wrap
-{
-  display: block;
-}
+.psycho-color-subconscious__info-list-wrap {display: block;}
 
 .psycho-color-subconscious__info-label
 {
@@ -3503,9 +3964,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--text);
 }
 
-/* --------------------------------
+/* -
    Reihe 3 links – Symbolkarte
--------------------------------- */
+- */
 
 .psycho-color-subconscious__card--symbols
 {
@@ -3543,10 +4004,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   font-weight: 300;
 }
 
-.psycho-color-subconscious__symbol-icon--vegan
-{
-  width: 70px;
-}
+.psycho-color-subconscious__symbol-icon--vegan {width: 70px;}
 
 .psycho-color-subconscious__symbol-text p:first-child
 {
@@ -3570,8 +4028,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   hyphens: auto;
 }
 
-
-
+/* -----------Grid------------- */
 .psycho-color-subconscious__note
 {
   grid-column: 1 / -1;
@@ -3608,9 +4065,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
-/* =========================================================
-   COLOR Abschnitt 4
-========================================================= */
+/* -
+   Abschnitt 4
+- */
 
 .psycho-color-culture.section
 {
@@ -3618,10 +4075,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding-bottom: 190px;
 }
 
-.psycho-color-culture__head
-{
-  margin-bottom: 34px;
-}
+.psycho-color-culture__head {margin-bottom: 34px;}
 
 .psycho-color-culture__head .h2
 {
@@ -3636,10 +4090,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   line-height: 1.5;
 }
 
-.psycho-color-culture__stage
-{
-  position: relative;
-}
+.psycho-color-culture__stage {position: relative;}
 
 .psycho-color-culture__backdrop
 {
@@ -3665,9 +4116,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 .psycho-color-culture__image--ostasien
-{
-  background-image: url("../assets/img/ostasien.png");
-}
+{background-image: url("../assets/img/ostasien.png");}
 
 .psycho-color-culture__region-title
 {
@@ -3711,18 +4160,11 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   box-shadow: var(--shadow);
 }
 
-.psycho-color-culture__card--left
-{
-  padding: 38px 38px 34px 38px;
-}
+/* Hätte man auch zusammen legen können hahaha kein bock mehr  */
+.psycho-color-culture__card--left {padding: 38px 38px 34px 38px;}
+.psycho-color-culture__card--right {padding: 38px 38px 34px 38px;}
 
-.psycho-color-culture__card--right
-{
-  padding: 38px 38px 34px 38px;
-}
-
-/* Navigation */
-
+/* weiter drücken bei den kultur kram */
 .psycho-color-culture__nav
 {
   position: absolute;
@@ -3741,15 +4183,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   cursor: pointer;
 }
 
-.psycho-color-culture__nav--prev
-{
-  left: -24px;
-}
-
-.psycho-color-culture__nav--next
-{
-  right: -24px;
-}
+/* so ein dummer müll, hatte kein bock mehr zu suchen */
+.psycho-color-culture__nav--prev {left: -24px;} 
+.psycho-color-culture__nav--next {right: -24px;}
 
 .psycho-color-culture__nav.is-hidden
 {
@@ -3890,10 +4326,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding-bottom: 38px;
 }
 
-.psycho-trigger-intro__head
-{
-  margin-bottom: 40px;
-}
+.psycho-trigger-intro__head {margin-bottom: 40px;}
 
 .psycho-trigger-intro__head .h2
 {
@@ -3916,20 +4349,15 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   margin-bottom: 22px;
 }
 
-.psycho-trigger-intro__item
-{
-  display: block;
-}
 
-.psycho-trigger-intro .psycho-card
-{
-  min-height: 320px;
-}
 
-.psycho-trigger-intro .psycho-card__kicker
-{
-  font-size: 14px;
-}
+
+/* hätte man auch global machen können, jetzt auch zu spät */
+.psycho-trigger-intro__item {display: block;}
+
+.psycho-trigger-intro .psycho-card {min-height: 320px;}
+
+.psycho-trigger-intro .psycho-card__kicker {font-size: 14px;} /* ja soi kann man seine zeit auch verschwenden*/
 
 .psycho-trigger-intro .psycho-card__title {margin-bottom: 26px;}
 
@@ -4001,8 +4429,11 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 /* =========================================================
-   Trigger 1. / 2. Abschnitt
+   Trigger 
 ========================================================= */
+/* -
+  1. und 2. Abschnitt
+-*/
 
 .psycho-trigger-cards.section
 {
@@ -4069,14 +4500,12 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--text);
 }
 
-.psycho-trigger-card:nth-child(3) .psycho-trigger-card__text
-{
-  margin-top: 12px;
-}
+/* ich könnte heulen einfach aus parenten wird schon */
+.psycho-trigger-card:nth-child(3) .psycho-trigger-card__text {margin-top: 12px;}
 
-/* =========================================================
+/* -
    3. Abschnitt
-========================================================= */
+- */
 
 .psycho-trigger-usage.section
 {
@@ -4084,10 +4513,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding-bottom: 120px;
 }
 
-.psycho-trigger-usage__head
-{
-  margin-bottom: 34px;
-}
+.psycho-trigger-usage__head {margin-bottom: 34px;}
 
 .psycho-trigger-usage__grid
 {
@@ -4112,7 +4538,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   justify-content: flex-start;
 }
 
-/* Linke Karte (nur Icon) */
+/* Linke Karte NUR ICON */
 .psycho-trigger-usage-card--visual
 {
   align-items: center;
@@ -4213,9 +4639,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   text-align: center;
 }
 
-/* =========================================================
+/* -
    4. Abschnitt
-========================================================= */
+- */
 
 .psycho-trigger-levels.section
 {
@@ -4223,10 +4649,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding-bottom: 130px;
 }
 
-.psycho-trigger-levels__head
-{
-  margin-bottom: 34px;
-}
+.psycho-trigger-levels__head {margin-bottom: 34px;}
 
 .psycho-trigger-levels__head .h2
 {
@@ -4262,15 +4685,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   padding: 36px 40px 34px;
 }
 
-.psycho-trigger-levels-card .psycho-card__kicker
-{
-  font-size: 14px;
-}
+.psycho-trigger-levels-card .psycho-card__kicker {font-size: 14px;}
 
-.psycho-trigger-levels-card .psycho-card__title
-{
-  margin: 0 0 30px;
-}
+.psycho-trigger-levels-card .psycho-card__title {margin: 0 0 30px;}
 
 .psycho-trigger-levels__bullet-list
 {
@@ -4477,15 +4894,1081 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
+
 /* =========================================================
-   IMPRINT HERO
+   PSYCHO RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px)
+{
+  /* ---------------------------------
+     HERO
+  --------------------------------- */
+  .psycho-hero__grid
+  {
+    width: calc(100% - 80px);
+    margin: 0 0 0 40px;
+    height: 560px;
+  }
+
+  .psycho-hero__media
+  {
+    height: 560px;
+  }
+
+  .psycho-hero__content
+  {
+    left: 48px;
+    top: 210px;
+    width: 460px;
+  }
+
+  .psycho-hero__content .h1
+  {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .psycho-hero__content .muted
+  {
+    width: auto;
+    max-width: 420px;
+  }
+
+  /* ---------------------------------
+     SUBJECT CARDS
+  --------------------------------- */
+  .psycho-subjects__grid
+  {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* ---------------------------------
+     AD PSYCHOLOGY
+  --------------------------------- */
+  .psycho-definition__grid
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .psycho-card
+  {
+    min-height: auto;
+  }
+
+  .psycho-design__media-row
+  {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .psycho-design__cards
+  {
+    flex-direction: column;
+  }
+
+  .psycho-trust__grid
+  {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .psycho-trust__media
+  {
+    min-height: 280px;
+  }
+
+  .psycho-trust__card
+  {
+    min-height: auto;
+  }
+
+  /* ---------------------------------
+     PERCEPTION
+  --------------------------------- */
+  .psycho-perception-intro__grid
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .psycho-perception-stack__card-inner
+  {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .psycho-perception-stack__media
+  {
+    height: 260px;
+  }
+
+  .psycho-perception-context__grid
+  {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .psycho-perception-context__card--image
+  {
+    grid-row: auto;
+    min-height: 280px;
+  }
+
+  .psycho-perception-context__card--highlight
+  {
+    grid-column: 1 / -1;
+  }
+
+  .psycho-summary__grid
+  {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .psycho-summary__divider
+  {
+    display: none;
+  }
+
+  /* ---------------------------------
+     COLOR
+  --------------------------------- */
+  .psycho-color-intro__grid
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .psycho-color-effects__grid
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .psycho-color-subconscious__layout
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .psycho-color-subconscious__card--top
+  {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 34px 36px;
+  }
+
+  .psycho-color-subconscious__signals
+  {
+    margin-right: 0;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+
+  .psycho-color-subconscious__card--info
+  {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .psycho-color-subconscious__info-text
+  {
+    max-width: 100%;
+  }
+
+  .psycho-color-subconscious__info-side
+  {
+    gap: 20px;
+  }
+
+  .psycho-color-culture__cards
+  {
+    width: calc(100% - 60px);
+    grid-template-columns: 1fr;
+    gap: 24px;
+    bottom: -220px;
+  }
+
+  .psycho-color-culture__card
+  {
+    min-height: auto;
+  }
+
+  .psycho-color-culture.section
+  {
+    padding-bottom: 340px;
+  }
+
+  /* ---------------------------------
+     TRIGGER
+  --------------------------------- */
+  .psycho-trigger-intro__grid
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .psycho-trigger-cards__grid
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .psycho-trigger-usage__grid
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .psycho-trigger-levels__top-grid,
+  .psycho-trigger-levels__middle-grid,
+  .psycho-trigger-levels__bottom-grid
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .psycho-trigger-levels__mini-group
+  {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 680px)
+{
+  /* ---------------------------------
+     HERO
+  --------------------------------- */
+  .psycho-hero
+  {
+    padding-top: 18px;
+  }
+
+  .psycho-hero__grid
+  {
+    width: calc(100% - 32px);
+    margin: 0 16px;
+    height: auto;
+  }
+
+  .psycho-hero__media
+  {
+    height: 420px;
+    border-radius: 24px;
+  }
+
+  .psycho-hero__media::after
+  {
+    background: linear-gradient(
+      to bottom,
+      rgba(236, 240, 247, 0.88) 0%,
+      rgba(236, 240, 247, 0.74) 30%,
+      rgba(236, 240, 247, 0.28) 62%,
+      rgba(236, 240, 247, 0.06) 100%
+    );
+  }
+
+  .psycho-hero__content
+  {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    top: 170px;
+    width: auto;
+  }
+
+  .psycho-hero__content .h1
+  {
+    margin: 0 0 18px;
+    font-size: clamp(28px, 9vw, 40px);
+    line-height: 1.08;
+  }
+
+  .psycho-hero__content .muted
+  {
+    max-width: 100%;
+    margin-bottom: 24px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .psycho-hero .btn
+  {
+    height: 30px;
+    padding: 0 14px;
+    font-size: 10px;
+  }
+
+  /* ---------------------------------
+     SUBJECT CARDS
+  --------------------------------- */
+  .psycho-subjects.section
+  {
+    padding-top: 34px;
+    padding-bottom: 24px;
+  }
+
+  .psycho-subjects__grid
+  {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .psycho-subject-card__button
+  {
+    min-height: 170px;
+    border-radius: 22px;
+    padding: 20px 14px 16px;
+  }
+
+  .psycho-subject-card__icon-wrap
+  {
+    min-height: 66px;
+    margin-bottom: 22px;
+  }
+
+  .psycho-subject-card__icon
+  {
+    width: 84px;
+  }
+
+  .psycho-subject-card__label
+  {
+    font-size: 15px;
+  }
+
+  .psycho-subject-card__more-text
+  {
+    font-size: 12px;
+  }
+
+  /* ---------------------------------
+     GLOBAL CARD SPACING
+  --------------------------------- */
+  .psycho-card
+  {
+    border-radius: 22px;
+    padding: 28px 22px 30px;
+  }
+
+  .psycho-card__kicker
+  {
+    margin-bottom: 18px;
+    font-size: 11px;
+  }
+
+  .psycho-card__title
+  {
+    margin-bottom: 22px;
+    font-size: 24px;
+    max-width: 100%;
+  }
+
+  .psycho-card__text
+  {
+    max-width: 100%;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .psycho-note,
+  .psycho-color-note,
+  .psycho-color-subconscious__note,
+  .psycho-trigger-note,
+  .psycho-trigger-levels__note
+  {
+    border-radius: 24px;
+    min-height: auto;
+    padding: 18px 18px 18px 18px;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .psycho-note__text,
+  .psycho-color-note__text,
+  .psycho-color-subconscious__note-text,
+  .psycho-trigger-note__text,
+  .psycho-trigger-levels__note-text
+  {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  /* ---------------------------------
+     AD PSYCHOLOGY
+  --------------------------------- */
+  .psycho-definition
+  {
+    padding-top: 60px;
+  }
+
+  .psycho-definition__head
+  {
+    margin-bottom: 34px;
+  }
+
+  .psycho-definition__title-svg
+  {
+    width: min(280px, 100%);
+    margin-bottom: 18px;
+  }
+
+  .psycho-design.section
+  {
+    padding-top: 26px;
+    padding-bottom: 70px;
+  }
+
+  .psycho-design__media-row
+  {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .psycho-design__media-card
+  {
+    height: 140px;
+    border-radius: 18px;
+  }
+
+  .psycho-design__media-icon
+  {
+    width: 84px;
+  }
+
+  .psycho-design__media-icon--kom
+  {
+    width: 100px;
+  }
+
+  .psycho-design__cards
+  {
+    gap: 14px;
+  }
+
+  .psycho-design-card
+  {
+    border-radius: 18px;
+  }
+
+  .psycho-design-card__trigger
+  {
+    min-height: 64px;
+    padding: 0 16px;
+  }
+
+  .psycho-design-card__trigger-title
+  {
+    font-size: 13px;
+  }
+
+  .psycho-design-card__list li
+  {
+    font-size: 16px;
+    line-height: 1.45;
+    max-width: 100%;
+  }
+
+  .psycho-design-card.is-open .psycho-design-card__panel,
+  .psycho-design-card.is-active .psycho-design-card__panel
+  {
+    max-height: 420px;
+    padding: 14px 20px 22px;
+  }
+
+  .psycho-trust.section
+  {
+    padding-top: 24px;
+    padding-bottom: 80px;
+  }
+
+  .psycho-trust__grid
+  {
+    gap: 18px;
+  }
+
+  .psycho-trust__media
+  {
+    min-height: 220px;
+    border-radius: 22px;
+  }
+
+  .psycho-trust__card
+  {
+    border-radius: 22px;
+    padding: 26px 22px;
+  }
+
+  .psycho-trust__title
+  {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .psycho-trust__list li
+  {
+    font-size: 15px;
+  }
+
+  /* ---------------------------------
+     PERCEPTION
+  --------------------------------- */
+  .psycho-perception-intro.section
+  {
+    padding-top: 60px;
+  }
+
+  .psycho-perception-intro__head
+  {
+    margin-bottom: 30px;
+  }
+
+  .psycho-perception-intro__card
+  {
+    min-height: 180px;
+    border-radius: 20px;
+    padding: 22px 18px;
+  }
+
+  .psycho-perception-intro__icon
+  {
+    width: 48px;
+    margin-bottom: 24px;
+  }
+
+  .psycho-perception-intro__text
+  {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .psycho-perception-stack.section
+  {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
+
+  .psycho-perception-stack__deck
+  {
+    gap: 22px;
+  }
+
+  .psycho-perception-stack__card-inner
+  {
+    min-height: auto;
+    border-radius: 22px;
+    padding: 24px 18px 22px;
+  }
+
+  .psycho-perception-stack__topline-group
+  {
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+
+  .psycho-perception-stack__kicker
+  {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .psycho-perception-stack__title
+  {
+    margin-left: 0;
+    margin-bottom: 22px;
+    font-size: 22px;
+  }
+
+  .psycho-perception-stack__text
+  {
+    margin-left: 0;
+  }
+
+  .psycho-perception-stack__text p
+  {
+    font-size: 15px;
+    line-height: 1.45;
+    margin-bottom: 14px;
+  }
+
+  .psycho-perception-stack__media
+  {
+    height: 200px;
+    border-radius: 16px;
+  }
+
+  .psycho-perception-context__grid
+  {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .psycho-perception-context__card
+  {
+    border-radius: 22px;
+    padding: 22px 18px;
+  }
+
+  .psycho-perception-context__card--image
+  {
+    min-height: 220px;
+    grid-row: auto;
+  }
+
+  .psycho-perception-context__card--highlight
+  {
+    grid-column: auto;
+  }
+
+  .psycho-perception-context__card--highlight p
+  {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .psycho-summary.section
+  {
+    padding: 70px 0 80px;
+  }
+
+  .psycho-summary__item h3
+  {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .psycho-summary__item p
+  {
+    font-size: 14px;
+    min-height: auto;
+  }
+
+  /* ---------------------------------
+     COLOR
+  --------------------------------- */
+  .psycho-color-intro.section
+  {
+    padding-top: 60px;
+    padding-bottom: 28px;
+  }
+
+  .psycho-color-intro__head
+  {
+    margin-bottom: 28px;
+  }
+
+  .psycho-color-effects.section
+  {
+    padding-top: 12px;
+    padding-bottom: 60px;
+  }
+
+  .psycho-color-effects__card
+  {
+    min-height: auto;
+    border-radius: 22px;
+    padding: 24px 18px 26px;
+  }
+
+  .psycho-color-effects__icon
+  {
+    width: 34px;
+    margin-bottom: 20px;
+  }
+
+  .psycho-color-effects__title
+  {
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+
+  .psycho-color-effects__list li
+  {
+    font-size: 15px;
+  }
+
+  .psycho-color-subconscious.section
+  {
+    padding-top: 20px;
+    padding-bottom: 60px;
+  }
+
+  .psycho-color-subconscious__layout
+  {
+    gap: 18px;
+  }
+
+  .psycho-color-subconscious__title
+  {
+    font-size: 22px;
+    margin-bottom: 24px;
+    white-space: normal;
+  }
+
+  .psycho-color-subconscious__text p
+  {
+    font-size: 15px;
+    line-height: 1.45;
+    text-align: left;
+    text-align-last: auto;
+  }
+
+  .psycho-color-subconscious__card
+  {
+    border-radius: 22px;
+  }
+
+  .psycho-color-subconscious__card--top
+  {
+    padding: 24px 18px;
+  }
+
+  .psycho-color-subconscious__signals
+  {
+    justify-content: flex-start;
+    gap: 18px;
+  }
+
+  .psycho-color-subconscious__signal-icon
+  {
+    width: 52px;
+  }
+
+  .psycho-color-subconscious__signal-label
+  {
+    font-size: 12px;
+  }
+
+  .psycho-color-subconscious__card--visual
+  {
+    min-height: 240px;
+    padding: 20px;
+  }
+
+  .psycho-color-subconscious__visual-main
+  {
+    max-width: 180px;
+  }
+
+  .psycho-color-subconscious__card--info
+  {
+    padding: 24px 18px;
+    gap: 18px;
+  }
+
+  .psycho-color-subconscious__arrow
+  {
+    width: 22px;
+    margin: 0;
+  }
+
+  .psycho-color-subconscious__info-side
+  {
+    align-items: flex-start;
+  }
+
+  .psycho-color-subconscious__info-label
+  {
+    margin: 0 0 14px;
+    font-size: 13px;
+  }
+
+  .psycho-color-subconscious__info-list
+  {
+    margin-left: 0;
+    gap: 8px;
+  }
+
+  .psycho-color-subconscious__info-list li
+  {
+    font-size: 15px;
+  }
+
+  .psycho-color-subconscious__card--symbols
+  {
+    min-height: auto;
+    gap: 34px;
+    padding: 24px 18px;
+  }
+
+  .psycho-color-subconscious__symbol-block
+  {
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 16px;
+    padding-left: 0;
+  }
+
+  .psycho-color-subconscious__symbol-icon
+  {
+    width: 54px;
+  }
+
+  .psycho-color-subconscious__symbol-icon--vegan
+  {
+    width: 50px;
+  }
+
+  .psycho-color-culture.section
+  {
+    padding-top: 18px;
+    padding-bottom: 520px;
+  }
+
+  .psycho-color-culture__head
+  {
+    margin-bottom: 24px;
+  }
+
+  .psycho-color-culture__backdrop
+  {
+    min-height: 320px;
+    border-radius: 24px;
+  }
+
+  .psycho-color-culture__region-title
+  {
+    top: 28px;
+    font-size: 22px;
+    letter-spacing: 0.12em;
+  }
+
+  .psycho-color-culture__cards
+  {
+    width: calc(100% - 24px);
+    bottom: -360px;
+    gap: 18px;
+  }
+
+  .psycho-color-culture__card
+  {
+    border-radius: 22px;
+  }
+
+  .psycho-color-culture__card--left,
+  .psycho-color-culture__card--right
+  {
+    padding: 22px 18px;
+  }
+
+  .psycho-color-culture__color-list
+  {
+    gap: 18px;
+  }
+
+  .psycho-color-culture__color-row,
+  .psycho-color-culture__right-row
+  {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .psycho-color-culture__color-icon,
+  .psycho-color-culture__right-icon
+  {
+    width: 28px;
+  }
+
+  .psycho-color-culture__color-text,
+  .psycho-color-culture__right-text,
+  .psycho-color-culture__note-text
+  {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .psycho-color-culture__nav--prev
+  {
+    left: -8px;
+  }
+
+  .psycho-color-culture__nav--next
+  {
+    right: -8px;
+  }
+
+  .psycho-color-culture__nav-icon
+  {
+    width: 30px;
+  }
+
+  /* ---------------------------------
+     TRIGGER
+  --------------------------------- */
+  .psycho-trigger-intro.section
+  {
+    padding-top: 60px;
+    padding-bottom: 28px;
+  }
+
+  .psycho-trigger-intro__head
+  {
+    margin-bottom: 28px;
+  }
+
+  .psycho-trigger-intro .psycho-card__text
+  {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .psycho-trigger-intro__list li
+  {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .psycho-trigger-cards.section
+  {
+    padding-top: 10px;
+    padding-bottom: 70px;
+  }
+
+  .psycho-trigger-card
+  {
+    min-height: auto;
+    border-radius: 22px;
+    padding: 24px 18px 26px;
+  }
+
+  .psycho-trigger-card__icon
+  {
+    width: 34px;
+    margin-bottom: 18px;
+  }
+
+  .psycho-trigger-card__title
+  {
+    margin-bottom: 18px;
+    font-size: 13px;
+  }
+
+  .psycho-trigger-card__text p
+  {
+    font-size: 15px;
+  }
+
+  .psycho-trigger-usage.section
+  {
+    padding-top: 26px;
+    padding-bottom: 70px;
+  }
+
+  .psycho-trigger-usage__head
+  {
+    margin-bottom: 22px;
+  }
+
+  .psycho-trigger-usage-card
+  {
+    min-height: auto;
+    border-radius: 22px;
+    padding: 24px 18px;
+  }
+
+  .psycho-trigger-usage-card:nth-child(2)
+  {
+    padding-left: 18px;
+  }
+
+  .psycho-trigger-usage-card__title
+  {
+    margin: 10px 0 18px;
+    font-size: 22px;
+  }
+
+  .psycho-trigger-usage-card__text p
+  {
+    font-size: 15px;
+  }
+
+  .psycho-trigger-usage-card__kicker
+  {
+    margin-top: 34px;
+    font-size: 13px;
+  }
+
+  .psycho-trigger-usage-card__list li
+  {
+    font-size: 15px;
+  }
+
+  .psycho-trigger-levels.section
+  {
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+
+  .psycho-trigger-levels__head
+  {
+    margin-bottom: 24px;
+  }
+
+  .psycho-trigger-levels-card
+  {
+    min-height: auto;
+    border-radius: 22px;
+    padding: 24px 18px;
+  }
+
+  .psycho-trigger-levels__bullet-list li
+  {
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .psycho-trigger-levels__subline
+  {
+    font-size: 14px;
+    margin: -4px 0 20px;
+  }
+
+  .psycho-trigger-levels__icon-grid
+  {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+    row-gap: 20px;
+  }
+
+  .psycho-trigger-levels__icon-label
+  {
+    font-size: 12px;
+    max-width: 100px;
+  }
+
+  .psycho-trigger-levels__mini-group
+  {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .psycho-trigger-levels-mini
+  {
+    border-radius: 20px;
+  }
+
+  .psycho-trigger-levels-mini--visual,
+  .psycho-trigger-levels-mini--text
+  {
+    min-height: auto;
+  }
+
+  .psycho-trigger-levels-mini--text
+  {
+    padding: 22px 18px;
+  }
+
+  .psycho-trigger-levels-mini__title
+  {
+    font-size: 22px;
+  }
+
+  .psycho-trigger-levels-mini__text p
+  {
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   Impressum Hero
    (gleich wie Psycho)
 ========================================================= */
 
-.imprint-hero
-{
-  padding-top: 34px;
-}
+.imprint-hero {padding-top: 34px;}
 
 .imprint-hero__grid
 {
@@ -4563,9 +6046,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
-/* =========================================================
-   IMPRINT CONTENT
-========================================================= */
+/* -
+   Impressum
+- */
 
 .imprint-content.section
 {
@@ -4626,9 +6109,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
-/* =========================================================
-   IMPRINT NOTE
-========================================================= */
+/* -
+   note
+- */
 
 .imprint-note
 {
@@ -4666,9 +6149,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
-/* =========================================================
-   IMPRINT LEGAL CARD
-========================================================= */
+/* -
+   rechtlcih card
+- */
 
 .imprint-legal-card
 {
@@ -4707,16 +6190,230 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--text);
 }
 
-
-
 /* =========================================================
-   SHOP – HERO
+   IMPRESSUM RESPONSIVE
 ========================================================= */
 
-.shop-hero
+@media (max-width: 1100px)
 {
-  padding-top: 34px;
+  .imprint-hero__grid
+  {
+    width: calc(100% - 80px);
+    margin: 0 0 0 40px;
+    height: 560px;
+  }
+
+  .imprint-hero__media
+  {
+    height: 560px;
+  }
+
+  .imprint-hero__content
+  {
+    left: 48px;
+    top: 210px;
+    width: 460px;
+  }
+
+  .imprint-hero__content .h1
+  {
+    width: auto;
+    max-width: 100%;
+  }
+
+  .imprint-hero__content .muted
+  {
+    width: auto;
+    max-width: 420px;
+  }
+
+  .imprint-grid
+  {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .imprint-note
+  {
+    max-width: 100%;
+  }
+
+  .imprint-legal-card
+  {
+    max-width: 100%;
+  }
 }
+
+@media (max-width: 680px)
+{
+  /* ---------------------------------
+     HERO
+  --------------------------------- */
+  .imprint-hero
+  {
+    padding-top: 18px;
+  }
+
+  .imprint-hero__grid
+  {
+    width: calc(100% - 32px);
+    margin: 0 16px;
+    height: auto;
+  }
+
+  .imprint-hero__media
+  {
+    height: 380px;
+    border-radius: 24px;
+  }
+
+  .imprint-hero__media::after
+  {
+    background: linear-gradient(
+      to bottom,
+      rgba(236, 240, 247, 0.88) 0%,
+      rgba(236, 240, 247, 0.74) 30%,
+      rgba(236, 240, 247, 0.28) 62%,
+      rgba(236, 240, 247, 0.06) 100%
+    );
+  }
+
+  .imprint-hero__content
+  {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    top: 150px;
+    width: auto;
+  }
+
+  .imprint-hero__content .h1
+  {
+    margin: 0 0 18px;
+    font-size: clamp(28px, 9vw, 40px);
+    line-height: 1.08;
+  }
+
+  .imprint-hero__content .muted
+  {
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .imprint-hero .btn
+  {
+    height: 30px;
+    padding: 0 14px;
+    font-size: 10px;
+  }
+
+  /* ---------------------------------
+     CONTENT
+  --------------------------------- */
+  .imprint-content.section
+  {
+    padding-top: 34px;
+    padding-bottom: 80px;
+  }
+
+  .imprint-grid
+  {
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .imprint-card
+  {
+    min-height: auto;
+    border-radius: 22px;
+    padding: 24px 18px;
+  }
+
+  .imprint-card__title
+  {
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .imprint-card__body
+  {
+    gap: 4px;
+  }
+
+  .imprint-card__body p
+  {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  /* ---------------------------------
+     NOTE
+  --------------------------------- */
+  .imprint-note
+  {
+    grid-template-columns: 20px minmax(0, 1fr);
+    gap: 12px;
+
+    min-height: auto;
+    margin-bottom: 18px;
+    padding: 16px 16px;
+
+    border-radius: 20px;
+  }
+
+  .imprint-note__icon
+  {
+    width: 16px;
+  }
+
+  .imprint-note__text
+  {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  /* ---------------------------------
+     LEGAL CARD
+  --------------------------------- */
+  .imprint-legal-card
+  {
+    border-radius: 22px;
+    padding: 24px 18px 22px;
+  }
+
+  .imprint-legal-card__title
+  {
+    margin-bottom: 14px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .imprint-legal-card__body
+  {
+    gap: 10px;
+  }
+
+  .imprint-legal-card__body p
+  {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* =========================================================
+   SHOP 
+========================================================= */
+
+/* -
+  hero
+-*/
+
+/* warum genau habe ich das nicht global festgelegt, warum nicht einfach padding buttom fürt header, ich könnte heulen */
+.shop-hero {padding-top: 34px;}
 
 .shop-hero__grid
 {
@@ -4791,9 +6488,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
-/* =========================================================
-   SHOP – FEATURES
-========================================================= */
+/* -
+   infos
+- */
 
 .shop-features.section
 {
@@ -4825,10 +6522,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   text-align: center;
 }
 
-.shop-feature-card__icon
-{
-  width: 28px;
-}
+.shop-feature-card__icon {width: 28px;}
 
 .shop-feature-card__label
 {
@@ -4841,15 +6535,12 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
 }
 
 
-/* =========================================================
-   SHOP – PRODUCT
-========================================================= */
+/* -
+   produkt
+- */
 
-/* Überschreibt alle min hight */
-.shop-product__grid > * 
-{
-  min-height: 350px;
-}
+/* -------Überschreibt alle min hight---------- */
+.shop-product__grid > * {min-height: 350px;}
 
 .shop-product.section
 {
@@ -5064,9 +6755,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   font-size: 10px;
 }
 
-/* =========================================================
-   SHOP – TRUST
-========================================================= */
+/* -
+   Benefits
+- */
 
 .shop-trust.section
 {
@@ -5095,10 +6786,7 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   gap: 30px;
 }
 
-.shop-trust__icon
-{
-  width: 25px;
-}
+.shop-trust__icon {width: 25px;}
 
 .shop-trust__item span
 {
@@ -5107,14 +6795,9 @@ section[id] {scroll-margin-top: calc(var(--header-h) + 16px);}
   color: var(--ink);
 }
 
-/* =========================================================
-   SHOP – SAMPLE MODAL
-========================================================= */
+/* Leseprtobe */
 
-body.sample-modal-open
-{
-  overflow: hidden;
-}
+body.sample-modal-open {overflow: hidden;}
 
 body.sample-modal-open .site-header,
 body.sample-modal-open .shop-hero,
@@ -5133,10 +6816,7 @@ body.sample-modal-open .shop-trust
   z-index: 2000;
 }
 
-.sample-modal[hidden]
-{
-  display: none;
-}
+.sample-modal[hidden] {display: none;}
 
 .sample-modal__overlay
 {
@@ -5217,6 +6897,700 @@ body.sample-modal-open .shop-trust
 }
 
 /* =========================================================
+   SHOP + CHECKOUT RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px)
+{
+  /* ---------------------------------
+     SHOP HERO
+  --------------------------------- */
+  .shop-hero__grid
+  {
+    width: calc(100% - 80px);
+    margin: 0 0 0 40px;
+    height: 460px;
+  }
+
+  .shop-hero__content
+  {
+    left: 48px;
+    top: 150px;
+    width: 420px;
+  }
+
+  /* ---------------------------------
+     SHOP FEATURES
+  --------------------------------- */
+  .shop-features__grid
+  {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  /* ---------------------------------
+     SHOP PRODUCT
+  --------------------------------- */
+  .shop-product__grid
+  {
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+  }
+
+  .shop-product__side
+  {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .shop-product__grid > *
+  {
+    min-height: auto;
+  }
+
+  .shop-product__cover-wrap
+  {
+    min-height: 320px;
+  }
+
+  .shop-product__main
+  {
+    min-height: 320px;
+  }
+
+  /* ---------------------------------
+     TRUST
+  --------------------------------- */
+  .shop-trust__grid
+  {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* ---------------------------------
+     CHECKOUT
+  --------------------------------- */
+  .checkout__grid
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout__summary
+  {
+    order: -1;
+  }
+
+  .checkout-summary-card
+  {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 680px)
+{
+  /* ---------------------------------
+     SHOP HERO
+  --------------------------------- */
+  .shop-hero
+  {
+    padding-top: 18px;
+  }
+
+  .shop-hero__grid
+  {
+    width: calc(100% - 32px);
+    margin: 0 16px;
+    height: auto;
+  }
+
+  .shop-hero__media
+  {
+    height: 380px;
+    border-radius: 24px;
+  }
+
+  .shop-hero__media::after
+  {
+    background: linear-gradient(
+      to bottom,
+      rgba(236, 240, 247, 0.88) 0%,
+      rgba(236, 240, 247, 0.74) 30%,
+      rgba(236, 240, 247, 0.28) 62%,
+      rgba(236, 240, 247, 0.06) 100%
+    );
+  }
+
+  .shop-hero__content
+  {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    top: 145px;
+    width: auto;
+  }
+
+  .shop-hero__content .h1
+  {
+    margin: 0 0 18px;
+    font-size: clamp(28px, 9vw, 40px);
+    line-height: 1.08;
+  }
+
+  .shop-hero__content .muted
+  {
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .shop-hero .btn
+  {
+    height: 30px;
+    padding: 0 14px;
+    font-size: 10px;
+  }
+
+  /* ---------------------------------
+     SHOP FEATURES
+  --------------------------------- */
+  .shop-features.section
+  {
+    padding-top: 26px;
+    padding-bottom: 18px;
+  }
+
+  .shop-features__grid
+  {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .shop-feature-card
+  {
+    min-height: 110px;
+    border-radius: 18px;
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .shop-feature-card__icon
+  {
+    width: 24px;
+  }
+
+  .shop-feature-card__label
+  {
+    font-size: 12px;
+    line-height: 1.25;
+  }
+
+  /* ---------------------------------
+     SHOP PRODUCT
+  --------------------------------- */
+  .shop-product.section
+  {
+    padding-top: 18px;
+    padding-bottom: 28px;
+  }
+
+  .shop-product__grid
+  {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .shop-product__cover-wrap
+  {
+    min-height: 280px;
+    border-radius: 22px;
+    background:
+      url("../assets/img/bookcover.png") center center / 180% auto no-repeat,
+      rgba(160, 175, 190, 0.28);
+  }
+
+  .shop-product__main
+  {
+    min-height: auto;
+    border-radius: 22px;
+    padding: 24px 20px 24px;
+  }
+
+  .shop-product__kicker
+  {
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+
+  .shop-product__title
+  {
+    font-size: 24px;
+    margin: 4px 0 6px;
+  }
+
+  .shop-product__subtitle
+  {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .shop-product__price
+  {
+    margin: 12px 0 24px;
+    padding-left: 0;
+    font-size: 22px;
+  }
+
+  .shop-product__actions
+  {
+    gap: 14px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .shop-product__buy,
+  .shop-product__sample
+  {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .shop-product__actions .btn
+  {
+    height: 32px;
+    font-size: 10px;
+  }
+
+  .shop-product__side
+  {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .shop-product-info-card,
+  .shop-product-payments-card
+  {
+    border-radius: 18px;
+  }
+
+  .shop-product-info-card
+  {
+    grid-template-columns: 32px 1fr;
+    gap: 14px;
+    padding: 14px 14px;
+  }
+
+  .shop-product__side .shop-product-info-card:nth-child(1) .shop-product-info-card__text,
+  .shop-product__side .shop-product-info-card:nth-child(2) .shop-product-info-card__text,
+  .shop-product__side .shop-product-info-card:nth-child(1) .shop-product-info-card__icon,
+  .shop-product__side .shop-product-info-card:nth-child(2) .shop-product-info-card__icon
+  {
+    margin-left: 0;
+  }
+
+  .shop-product-info-card__label
+  {
+    font-size: 11px;
+  }
+
+  .shop-product-info-card__value
+  {
+    font-size: 14px;
+  }
+
+  .shop-product-payments-card
+  {
+    padding: 14px;
+  }
+
+  .shop-product-payments-card__item span
+  {
+    font-size: 9px;
+  }
+
+  /* ---------------------------------
+     TRUST
+  --------------------------------- */
+  .shop-trust.section
+  {
+    padding-top: 0;
+    padding-bottom: 70px;
+  }
+
+  .shop-trust__item
+  {
+    min-height: 48px;
+    border-radius: 18px;
+    gap: 14px;
+    justify-content: flex-start;
+    padding: 0 16px;
+  }
+
+  .shop-trust__icon
+  {
+    width: 20px;
+  }
+
+  .shop-trust__item span
+  {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  /* ---------------------------------
+     SAMPLE MODAL
+  --------------------------------- */
+  .sample-modal__dialog
+  {
+    width: calc(100% - 24px);
+    max-height: 82vh;
+    border-radius: 22px;
+    padding: 24px 18px 22px;
+  }
+
+  .sample-modal__close
+  {
+    top: 10px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    font-size: 24px;
+  }
+
+  .sample-modal__kicker
+  {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .sample-modal__title
+  {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .sample-modal__content
+  {
+    gap: 12px;
+  }
+
+  .sample-modal__content p
+  {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* ---------------------------------
+     CHECKOUT
+  --------------------------------- */
+  .checkout.section
+  {
+    padding-top: 24px;
+    padding-bottom: 80px;
+  }
+
+  .checkout__head
+  {
+    margin-bottom: 18px;
+  }
+
+  .checkout__title
+  {
+    font-size: 36px;
+    line-height: 1.05;
+  }
+
+  .checkout-steps
+  {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .checkout-step__divider
+  {
+    display: none;
+  }
+
+  .checkout-step
+  {
+    gap: 10px;
+  }
+
+  .checkout-step__number
+  {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .checkout-step__label
+  {
+    font-size: 12px;
+  }
+
+  .checkout__grid
+  {
+    gap: 18px;
+  }
+
+  .checkout-summary-card
+  {
+    border-radius: 22px;
+    padding: 24px 18px;
+  }
+
+  .checkout-summary-card__kicker
+  {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .checkout-summary-card__title
+  {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .checkout-summary-card__product
+  {
+    grid-template-columns: 70px 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .checkout-summary-card__product-title
+  {
+    font-size: 16px;
+  }
+
+  .checkout-summary-card__product-subtitle
+  {
+    font-size: 14px;
+  }
+
+  .checkout-summary-card__line span
+  {
+    font-size: 15px;
+  }
+
+  .checkout-summary-card__total span
+  {
+    font-size: 17px;
+  }
+
+  .checkout-summary-card__note
+  {
+    font-size: 13px;
+  }
+
+  .checkout-panel
+  {
+    border-radius: 22px;
+    padding: 24px 18px 24px;
+  }
+
+  .checkout-panel__kicker
+  {
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+
+  .checkout-panel__title
+  {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .checkout-form
+  {
+    gap: 16px;
+  }
+
+  .checkout-form__row
+  {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .checkout-field
+  {
+    gap: 8px;
+  }
+
+  .checkout-field__label
+  {
+    font-size: 12px;
+  }
+
+  .checkout-field__input
+  {
+    min-height: 46px;
+    padding: 0 14px;
+    border-radius: 14px;
+    font-size: 15px;
+  }
+
+  .checkout-payment-options
+  {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .checkout-payment-option__label
+  {
+    font-size: 15px;
+  }
+
+  .checkout-review
+  {
+    gap: 12px;
+  }
+
+  .checkout-review__block
+  {
+    padding: 14px 14px;
+    border-radius: 14px;
+  }
+
+  .checkout-review__label
+  {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .checkout-review__value
+  {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .checkout-success__text
+  {
+    font-size: 16px;
+  }
+
+  .checkout-success__note
+  {
+    font-size: 14px;
+  }
+
+  .checkout-panel__actions
+  {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding-top: 24px;
+  }
+
+  .checkout-panel__actions .btn
+  {
+    width: 100%;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  /* ---------------------------------
+     LOADER
+  --------------------------------- */
+  .checkout-loader__inner
+  {
+    width: calc(100% - 32px);
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .checkout-loader__icon
+  {
+    width: 48px;
+    height: 48px;
+  }
+
+  .checkout-loader__inner p
+  {
+    font-size: 12px;
+  }
+
+  /* ---------------------------------
+     PAYPAL DEMO
+  --------------------------------- */
+  .paypal-demo
+  {
+    padding: 24px 12px;
+  }
+
+  .paypal-demo__card
+  {
+    border-radius: 22px;
+    padding: 24px 18px 22px;
+  }
+
+  .paypal-demo__brand
+  {
+    font-size: 24px;
+    margin-bottom: 14px;
+  }
+
+  .paypal-demo__kicker
+  {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .paypal-demo__title
+  {
+    font-size: 26px;
+    margin-bottom: 12px;
+  }
+
+  .paypal-demo__text
+  {
+    font-size: 14px;
+    margin-bottom: 18px;
+  }
+
+  .paypal-demo__fields
+  {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .paypal-demo__summary
+  {
+    gap: 8px;
+    margin-bottom: 18px;
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  .paypal-demo__line span
+  {
+    font-size: 14px;
+  }
+
+  .paypal-demo__actions
+  {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .paypal-demo__actions .btn
+  {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .paypal-demo__note
+  {
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
    CHECKOUT
 ========================================================= */
 
@@ -5226,10 +7600,7 @@ body.sample-modal-open .shop-trust
   padding-bottom: 140px;
 }
 
-.checkout__head
-{
-  margin-bottom: 28px;
-}
+.checkout__head {margin-bottom: 28px;}
 
 .checkout__title
 {
@@ -5309,27 +7680,15 @@ body.sample-modal-open .shop-trust
   align-items: start;
 }
 
-.checkout__main
-{
-  min-width: 0;
-}
+.checkout__main {min-width: 0;}
 
-.checkout__summary
-{
-  min-width: 0;
-}
+.checkout__summary {min-width: 0;}
 
 /* Step Panels */
 
-.checkout-step-panel
-{
-  display: none;
-}
+.checkout-step-panel {display: none;}
 
-.checkout-step-panel.is-active
-{
-  display: block;
-}
+.checkout-step-panel.is-active {display: block;}
 
 /* Linke Hauptbox */
 
@@ -5640,10 +7999,7 @@ body.sample-modal-open .shop-trust
   transition: transform 0.18s ease;
 }
 
-.checkout-payment-option input:checked + .checkout-payment-option__ui::after
-{
-  transform: scale(1);
-}
+.checkout-payment-option input:checked + .checkout-payment-option__ui::after {transform: scale(1);}
 
 .checkout-payment-option__label
 {
@@ -5660,9 +8016,7 @@ body.sample-modal-open .shop-trust
 }
 
 .checkout-payment-fields[hidden]
-{
-  display: none !important;
-}
+{display: none !important;}
 
 /* Schritt 3 – Review */
 
@@ -5736,14 +8090,12 @@ body.sample-modal-open .shop-trust
 .checkout button,
 .checkout input,
 .checkout select
-{
-  font: inherit;
-}
+{font: inherit;}
 
 
 
 /* =========================================================
-   CHECKOUT LOADER
+   Laden
 ========================================================= */
 
 .checkout-loader
@@ -5821,9 +8173,7 @@ body.sample-modal-open .shop-trust
 ========================================================= */
 
 .paypal-demo-page
-{
-  min-height: 100vh;
-}
+{min-height: 100vh;}
 
 .paypal-demo
 {
@@ -5952,6 +8302,275 @@ body.sample-modal-open .shop-trust
 }
 
 
+
+/* =========================================================
+   CHECKOUT RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px)
+{
+  .checkout__grid
+  {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .checkout__summary
+  {
+    order: -1;
+  }
+
+  .checkout-summary-card
+  {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 680px)
+{
+  .checkout.section
+  {
+    padding-top: 24px;
+    padding-bottom: 80px;
+  }
+
+  .checkout__head
+  {
+    margin-bottom: 18px;
+  }
+
+  .checkout__title
+  {
+    font-size: 36px;
+    line-height: 1.05;
+  }
+
+  /* Fortschritt */
+  .checkout-steps
+  {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .checkout-step__divider
+  {
+    display: none;
+  }
+
+  .checkout-step
+  {
+    gap: 10px;
+  }
+
+  .checkout-step__number
+  {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .checkout-step__label
+  {
+    font-size: 12px;
+  }
+
+  /* Layout */
+  .checkout__grid
+  {
+    gap: 18px;
+  }
+
+  /* Summary */
+  .checkout-summary-card
+  {
+    border-radius: 22px;
+    padding: 24px 18px;
+  }
+
+  .checkout-summary-card__kicker
+  {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  .checkout-summary-card__title
+  {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .checkout-summary-card__product
+  {
+    grid-template-columns: 70px 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .checkout-summary-card__product-title
+  {
+    font-size: 16px;
+  }
+
+  .checkout-summary-card__product-subtitle
+  {
+    font-size: 14px;
+  }
+
+  .checkout-summary-card__line span
+  {
+    font-size: 15px;
+  }
+
+  .checkout-summary-card__total span
+  {
+    font-size: 17px;
+  }
+
+  .checkout-summary-card__note
+  {
+    font-size: 13px;
+  }
+
+  /* Hauptpanel */
+  .checkout-panel
+  {
+    border-radius: 22px;
+    padding: 24px 18px 24px;
+  }
+
+  .checkout-panel__kicker
+  {
+    margin-bottom: 10px;
+    font-size: 11px;
+  }
+
+  .checkout-panel__title
+  {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  /* Formular */
+  .checkout-form
+  {
+    gap: 16px;
+  }
+
+  .checkout-form__row
+  {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .checkout-field
+  {
+    gap: 8px;
+  }
+
+  .checkout-field__label
+  {
+    font-size: 12px;
+  }
+
+  .checkout-field__input
+  {
+    min-height: 46px;
+    padding: 0 14px;
+    border-radius: 14px;
+    font-size: 15px;
+  }
+
+  .checkout-field__select
+  {
+    font-size: 15px;
+  }
+
+  /* Zahlungsarten */
+  .checkout-payment-options
+  {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .checkout-payment-option__label
+  {
+    font-size: 15px;
+  }
+
+  /* Review */
+  .checkout-review
+  {
+    gap: 12px;
+  }
+
+  .checkout-review__block
+  {
+    padding: 14px 14px;
+    border-radius: 14px;
+  }
+
+  .checkout-review__label
+  {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .checkout-review__value
+  {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  /* Success */
+  .checkout-success__text
+  {
+    font-size: 16px;
+  }
+
+  .checkout-success__note
+  {
+    font-size: 14px;
+  }
+
+  /* Buttons */
+  .checkout-panel__actions
+  {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding-top: 24px;
+  }
+
+  .checkout-panel__actions .btn
+  {
+    width: 100%;
+    justify-content: center;
+    font-size: 10px;
+  }
+
+  /* Loader */
+  .checkout-loader__inner
+  {
+    width: calc(100% - 32px);
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .checkout-loader__icon
+  {
+    width: 48px;
+    height: 48px;
+  }
+
+  .checkout-loader__inner p
+  {
+    font-size: 12px;
+  }
+}
+
 /* =========================================================
    FOOTER
 ========================================================= */
@@ -6027,4 +8646,279 @@ body.sample-modal-open .shop-trust
   color: var(--text);
   font-weight: 300;
   margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   BARRIEREFREIHEITSMODUS
+========================================================= */
+
+body.a11y-mode
+{
+  --bg-top: #ffffff;
+  --bg-bot: #dfe7f0;
+
+  --ink: #0f2f6d;
+  --text: #111111;
+  --muted: rgba(17, 17, 17, 0.88);
+
+  --card: rgba(255, 255, 255, 0.98);
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
+  --shadow-soft: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Grundsätzlich besser lesbar */
+body.a11y-mode
+{
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+/* Typografie allgemein */
+body.a11y-mode .h1
+{
+  font-size: clamp(40px, 4.8vw, 64px);
+  line-height: 1.18;
+}
+
+body.a11y-mode .h2
+{
+  font-size: clamp(30px, 3.3vw, 46px);
+  line-height: 1.2;
+}
+
+body.a11y-mode .h3
+{
+  font-size: clamp(22px, 2.5vw, 30px);
+  line-height: 1.25;
+}
+
+body.a11y-mode .lead,
+body.a11y-mode .muted,
+body.a11y-mode .body,
+body.a11y-mode p,
+body.a11y-mode li,
+body.a11y-mode span
+{
+  line-height: 1.75;
+  color: var(--text);
+}
+
+/* kleine Texte nicht zu klein */
+body.a11y-mode .small,
+body.a11y-mode .kicker,
+body.a11y-mode .card-kicker,
+body.a11y-mode .result-card__topline,
+body.a11y-mode .shop-product__kicker,
+body.a11y-mode .checkout-panel__kicker,
+body.a11y-mode .checkout-summary-card__kicker,
+body.a11y-mode .paypal-demo__kicker
+{
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+
+/* Fließtext dicker für bessere Lesbarkeit */
+body.a11y-mode p,
+body.a11y-mode li,
+body.a11y-mode span,
+body.a11y-mode .muted,
+body.a11y-mode .body,
+body.a11y-mode .checkout-review__value,
+body.a11y-mode .checkout-summary-card__line span,
+body.a11y-mode .shop-product__subtitle,
+body.a11y-mode .psycho-card__text,
+body.a11y-mode .psycho-note__text,
+body.a11y-mode .psycho-trigger-card__text p,
+body.a11y-mode .imprint-card__body p,
+body.a11y-mode .imprint-legal-card__body p,
+body.a11y-mode .paypal-demo__text
+{
+  font-weight: 400;
+}
+
+
+/* Links deutlicher */
+body.a11y-mode a
+{
+  text-underline-offset: 0.18em;
+}
+
+body.a11y-mode .nav-link,
+body.a11y-mode .site-footer__nav a
+{
+  font-weight: 400;
+}
+
+/* Buttons größer und klarer */
+body.a11y-mode .btn
+{
+  min-height: 42px;
+  padding: 0 22px;
+  font-size: 13px;
+  letter-spacing: 0.10em;
+}
+
+body.a11y-mode .btn-outline
+{
+  background: #ffffff;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+}
+
+body.a11y-mode .btn-primary
+{
+  box-shadow: none;
+}
+
+/* Karten und Boxen klarer */
+body.a11y-mode .card,
+body.a11y-mode .result-card,
+body.a11y-mode .result-icon-card,
+body.a11y-mode .psycho-card,
+body.a11y-mode .psycho-note,
+body.a11y-mode .psycho-color-note,
+body.a11y-mode .psycho-color-subconscious__card,
+body.a11y-mode .psycho-color-subconscious__note,
+body.a11y-mode .psycho-trigger-card,
+body.a11y-mode .psycho-trigger-note,
+body.a11y-mode .psycho-trigger-usage-card,
+body.a11y-mode .psycho-trigger-levels-card,
+body.a11y-mode .psycho-trigger-levels-mini,
+body.a11y-mode .psycho-trigger-levels__note,
+body.a11y-mode .imprint-card,
+body.a11y-mode .imprint-note,
+body.a11y-mode .imprint-legal-card,
+body.a11y-mode .shop-feature-card,
+body.a11y-mode .shop-product__main,
+body.a11y-mode .shop-product-info-card,
+body.a11y-mode .shop-product-payments-card,
+body.a11y-mode .shop-trust__item,
+body.a11y-mode .checkout-panel,
+body.a11y-mode .checkout-summary-card,
+body.a11y-mode .checkout-review__block,
+body.a11y-mode .sample-modal__dialog,
+body.a11y-mode .paypal-demo__card,
+body.a11y-mode .paypal-demo__summary,
+body.a11y-mode .cookie-banner__inner
+{
+  border: 2px solid rgba(15, 47, 109, 0.16);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
+/* Inputs klarer */
+body.a11y-mode .checkout-field__input
+{
+  background: #ffffff;
+  border: 2px solid rgba(15, 47, 109, 0.25);
+  min-height: 56px;
+  font-size: 18px;
+}
+
+/* Fokus klar sichtbar */
+body.a11y-mode a:focus-visible,
+body.a11y-mode button:focus-visible,
+body.a11y-mode input:focus-visible,
+body.a11y-mode select:focus-visible
+{
+  outline: 3px solid #f9b50f;
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Navigation lesbarer */
+body.a11y-mode .nav-link.is-active
+{
+  font-weight: 500;
+}
+
+body.a11y-mode .nav-link:hover
+{
+  transform: none;
+}
+
+/* Hover-Spielereien reduzieren */
+body.a11y-mode .btn-primary:hover,
+body.a11y-mode .logo:hover,
+body.a11y-mode .nav-link:hover,
+body.a11y-mode .results-card:hover,
+body.a11y-mode .result-icon-card:hover,
+body.a11y-mode .poster-fan__item:hover,
+body.a11y-mode .psycho-subject-card__button:hover
+{
+  transform: none;
+  filter: none;
+}
+
+/* Reveal sofort sichtbar */
+body.a11y-mode .reveal
+{
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+/* Weniger Bewegung allgemein */
+body.a11y-mode *,
+body.a11y-mode *::before,
+body.a11y-mode *::after
+{
+  scroll-behavior: auto !important;
+  transition-duration: 0.01ms !important;
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+}
+
+/* Hero-Bilder etwas klarer */
+body.a11y-mode .hero-figure
+{
+  opacity: 0.82;
+  filter: blur(0.4px);
+}
+
+body.a11y-mode .hero-stage::before
+{
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.72) 0%,
+      rgba(255,255,255,0.42) 28%,
+      rgba(255,255,255,0.10) 52%,
+      rgba(255,255,255,0.74) 100%
+    );
+}
+
+/* Cookie Banner besser lesbar */
+body.a11y-mode .cookie-banner__title
+{
+  font-size: 17px;
+}
+
+body.a11y-mode .cookie-banner__text
+{
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Footer klarer */
+body.a11y-mode .site-footer
+{
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Mobile: A11y Toggle selbst etwas klarer */
+body.a11y-mode .a11y-toggle__track
+{
+  border: 2px solid rgba(15, 47, 109, 0.28);
 }
